@@ -1,0 +1,38 @@
+.btn {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-ease);
+
+  &.variant-solid {
+    padding: 10px 30px;
+    color: var(--primary);
+    font-size: 16px;
+    font-family: var(--font-secondary);
+    background: #fff;
+    border-radius: 5px;
+    white-space: nowrap;
+
+    @include media("xs") {
+      font-size: 14px;
+    }
+  }
+
+  &.variant-outline {
+    padding: 10px 22px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    line-height: 1;
+    white-space: nowrap;
+
+    &:hover {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    @include media("sm") {
+      font-size: 14px;
+    }
+  }
+}

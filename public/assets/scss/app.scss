@@ -1,0 +1,50 @@
+@import "base/mixins";
+
+@include font-face("Roboto", 400);
+@include font-face("Roboto", 700);
+
+:root {
+  --primary: #6194e0;
+  --primary-light: #61bfe069;
+  --secondary: #e08761;
+  --background: #f4fbff;
+  --text-color: #264065;
+  --gray: #909090;
+  --font-primary: "Roboto", sans-serif;
+  --transition-ease: 0.3s ease;
+  --transition-bezier: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --content-width: 1406px;
+  --content-padding: 20px;
+}
+
+@include media("3xl") {
+  :root {
+    --content-width: 1280px;
+  }
+}
+@include media("xl") {
+  :root {
+    --content-width: 1024px;
+  }
+}
+@include media("lg") {
+  :root {
+    --content-width: 768px;
+  }
+}
+@include media("md") {
+  :root {
+    --content-width: 640px;
+  }
+}
+@include media("sm") {
+  :root {
+    --content-width: 475px;
+    --content-padding: 16px;
+  }
+}
+
+@import "base/normalize";
+@import "ui/index";
+@import "components/index";
+@import "index";

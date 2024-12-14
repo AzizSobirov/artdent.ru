@@ -1,0 +1,51 @@
+---
+import { H2, H3 } from "ui";
+
+interface Props {
+  success?: boolean;
+  id?: string;
+}
+
+const { success = false, id = "form" } = Astro.props;
+---
+
+<div class="form">
+  {
+    success ? (
+      <>
+        <H3>Спасибо за Вашу заявку!</H3>
+        <div class="text-desc">
+          Наши менеджеры уже бьются за право позвонить Вам для уточнения
+          деталей, как только определится победитель - он Вам позвонит :)
+        </div>
+      </>
+    ) : (
+      <>
+        <H3>Проверьте объявление бесплатно</H3>
+        <div class="text-desc">
+          Получите бесплатный анализ объявления вместо того, что бы сразу
+          отдавать деньги возможным обманщикам
+        </div>
+        <form id={id}>
+          <input
+            type="url"
+            name="link"
+            placeholder="Ссылка на объявление"
+            required
+          />
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Номер телефона"
+            required
+          />
+          <button type="submit">Проверить объявление</button>
+        </form>
+        <div class="text-xs">
+          Отправляя заявку я даю согласие на обработку персональных данных
+        </div>
+      </>
+    )
+  }
+</div>

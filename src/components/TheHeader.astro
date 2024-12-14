@@ -1,0 +1,33 @@
+---
+import { H2, Image, Icon } from "ui";
+---
+
+<header class="header">
+  <div class="container">
+    <a
+      href="/"
+      class="header__logo"
+      title="Команда по автоподбору №1 в Санкт-Петербурге"
+    >
+      <Image src="logo.png" alt="logo" />
+      <div class="text-xs font-light">
+        Команда по автоподбору №1 <br />  в Санкт-Петербурге
+      </div>
+    </a>
+
+    <nav class="header__menu">
+      <ul class="menu">
+        <li class="menu-item active"><a href="/">Главная</a></li>
+        <li class="menu-item menu-item-has-children">
+          <a href="/services">Услуги</a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="#">Подбор новых авто</a></li>
+            <li class="menu-item"><a href="#">Эндоскопия</a></li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="/about">О нас</a></li>
+        <li class="menu-item"><a href="/contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

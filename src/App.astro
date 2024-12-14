@@ -1,0 +1,47 @@
+---
+import TheFooter from "./components/TheFooter.astro";
+import TheModal from "./components/TheModal.astro";
+import TheHeader from "./components/TheHeader.astro";
+import "../public/assets/scss/app.scss";
+
+const version = Math.random().toString(16).slice(10);
+
+const styles: string[] = [];
+const scripts: string[] = [
+  "./assets/js/fancybox.min.js",
+  `./assets/js/app.js?v=${version}`,
+];
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Site description" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    {styles.map((style) => <link rel="stylesheet" href={style} />)}
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot name="header" />
+    <!-- The Header -->
+    <TheHeader />
+    <!-- The Main -->
+    <slot />
+    <!-- The Footer -->
+    <!-- <TheFooter /> -->
+    <!-- The Modal -->
+    <TheModal />
+    <slot name="footer" />
+    <!-- The Scripts -->
+    {scripts.map((script) => <script src={script} />)}
+  </body>
+</html>
