@@ -181,3 +181,23 @@ if (header) {
     });
   });
 }
+
+// hero swiper
+let heroSwiper = new Swiper(".hero__swiper .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  effect: "fade",
+  loop: true,
+  autoHeight: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".hero__swiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".hero__swiper .btn-next",
+  },
+});

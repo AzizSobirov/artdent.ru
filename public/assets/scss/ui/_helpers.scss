@@ -41,6 +41,10 @@
   color: var(--primary);
 }
 
+.text-gray {
+  color: var(--gray);
+}
+
 .text-white {
   color: #fff;
 }
@@ -113,10 +117,19 @@
 
 .text-h3 {
   color: var(--primary);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
+  text-transform: uppercase;
 
   @include media("sm") {
     font-size: 18px;
   }
+}
+
+.text-p {
+  font-size: 18px;
+}
+
+.text-default {
+  color: var(--text-color);
 }

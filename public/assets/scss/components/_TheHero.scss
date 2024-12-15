@@ -2,8 +2,151 @@
   position: relative;
   padding-top: 80px;
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
   .text-h1 {
     width: 100%;
     max-width: 780px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    user-select: none;
+
+    img {
+      pointer-events: none;
+    }
+  }
+
+  &__swiper {
+    margin-top: 15px;
+    position: relative;
+    width: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      opacity: 0 !important;
+
+      &-active {
+        opacity: 1 !important;
+      }
+    }
+
+    .swiper-pagination {
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+
+      &-bullet {
+        margin: 0 !important;
+        width: 16px;
+        height: 16px;
+        transform: rotate(45deg);
+        background: var(--primary-light);
+        border-radius: 3px;
+        transition: var(--transition-ease);
+
+        &-active {
+          transform: scale(1.1) rotate(45deg);
+          background: var(--primary);
+        }
+      }
+    }
+
+    .swiper-nav {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 2;
+      transform: translate(0, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      @include media("sm") {
+        display: none;
+      }
+
+      .swiper-btn {
+        width: 64px;
+        height: 64px;
+        background-color: var(--primary);
+        background-image: url('data:image/svg+xml,<svg width="18" height="33" viewBox="0 0 18 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L16 16.5L1 31.5" stroke="white" stroke-width="2" /></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 32px 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+
+    .slide {
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+
+      @include media("3xl", min-width) {
+        .text-h3 {
+          font-size: 28px;
+        }
+      }
+
+      &__prices {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 24px;
+      }
+
+      &-realprice {
+        font-size: 28px;
+      }
+
+      &-price {
+        color: var(--primary);
+        font-size: 42px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  &__advantages {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 70%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }

@@ -10,7 +10,7 @@ body {
   color: var(--text-color, #111);
   font-family: var(--font-primary, sans-serif);
   line-height: inherit;
-  background: var(--background, #fff);
+  background-color: var(--background, #fff);
 
   &.overflow-hidden {
     overflow: hidden;

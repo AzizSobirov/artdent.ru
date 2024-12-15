@@ -1,5 +1,5 @@
 ---
-import { Section, H1, H2, H3, H4, Image } from "ui";
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
 
 interface Props {
   id: string;
@@ -11,4 +11,78 @@ const { id, title } = Astro.props;
 
 <Section name="hero">
   <H1 set:html={title} />
+
+  <div class="hero__img">
+    <Image class="hero__img-img" src={`hero/${id}.png`} alt={title} />
+  </div>
+
+  <div class="hero__swiper">
+    <div class="swiper-pagination"></div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide">
+          <H3>АМЕРИКАНСКАЯ БРЕКЕТ <br /> СИСТЕМА</H3>
+          <p class="text-p">с установкой</p>
+          <div class="slide__prices">
+            <div class="slide-realprice line-through text-gray">99 999 ₽</div>
+            <div class="slide-price">39 999 ₽</div>
+          </div>
+        </div>
+        <div class="swiper-slide slide">
+          <H3>Slide 2</H3>
+          <p class="text-p">с установкой</p>
+          <div class="slide__prices">
+            <div class="slide-realprice line-through text-gray">99 999 ₽</div>
+            <div class="slide-price">19 999 ₽</div>
+          </div>
+        </div>
+        <div class="swiper-slide slide">
+          <H3>Slide 3</H3>
+          <p class="text-p">с установкой</p>
+          <div class="slide__prices">
+            <div class="slide-realprice line-through text-gray">99 999 ₽</div>
+            <div class="slide-price">59 999 ₽</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-nav">
+      <div class="swiper-btn btn-next"></div>
+    </div>
+  </div>
+
+  <div class="hero__actions">
+    <div
+      class="btn variant-solid"
+      role="button"
+      tabindex="0"
+      aria-label="Запись на прием"
+      data-modal="form"
+    >
+      Запись на прием
+    </div>
+    <a href="/prices" class="btn variant-outline"> Узнать цены </a>
+  </div>
+
+  <div class="hero__advantages">
+    <div class="hero__advantages-item">
+      <Icon src="hospital.svg" />
+      <H3 class="text-default">Честные и низкие <br /> цены</H3>
+      <p class="text-p text-gray">
+        Без скрытых переплат и доплат на <br /> кассе.
+      </p>
+    </div>
+    <div class="hero__advantages-item">
+      <Icon src="stethoscope.svg" />
+      <H3 class="text-default">Честные и низкие <br /> цены</H3>
+      <p class="text-p text-gray">Сильный коллектив с большим <br /> опытом.</p>
+    </div>
+    <div class="hero__advantages-item">
+      <Icon src="microscope.svg" />
+      <H3 class="text-default">Лучшее <br /> оборудование</H3>
+      <p class="text-p text-gray">
+        Постоянно обновляем <br /> наше оборудование.
+      </p>
+    </div>
+  </div>
 </Section>

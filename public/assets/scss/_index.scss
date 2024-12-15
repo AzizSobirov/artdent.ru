@@ -1,3 +1,14 @@
+body {
+  background-image: url("../img/bg.svg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media("lg") {
+    background-size: 120% auto;
+  }
+}
+
 main {
   max-width: 100%;
   overflow: hidden;
@@ -9,6 +20,10 @@ section {
   @include media("lg") {
     padding: 30px 0;
   }
+}
+
+.example {
+  min-height: 200vh;
 }
 
 // @include show(".endoscopy");
