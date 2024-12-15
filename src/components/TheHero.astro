@@ -1,0 +1,14 @@
+---
+import { Section, H1, H2, H3, H4, Image } from "ui";
+
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<Section name="hero">
+  <H1 set:html={title} />
+</Section>

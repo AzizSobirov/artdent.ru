@@ -1,13 +1,12 @@
 ---
 import App from "../App.astro";
-import { Section, Image, Icon, H1, H2, H3, H4} from "ui";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
 ---
 
 <App title="Главная">
   <main>
-    <!-- Intro -->
-    <Section name="intro">
-      <H1>Hello world</H1>
-    </Section>
+    <!-- TheHero -->
+    <TheHero id="1" title="<span>Стоматология</span><br/> в москве" />
   </main>
 </App>

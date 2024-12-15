@@ -3,16 +3,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   transition: var(--transition-ease);
 
   &.variant-solid {
-    padding: 10px 30px;
-    color: var(--primary);
-    font-size: 16px;
-    font-family: var(--font-secondary);
-    background: #fff;
-    border-radius: 5px;
-    white-space: nowrap;
+    width: 238px;
+    height: 60px;
+    color: #fff;
+    font-size: 18px;
+    background: var(--secondary);
+    border-radius: 999px;
+
+    &:hover {
+      background: var(--secondary-light);
+    }
 
     @include media("xs") {
       font-size: 14px;
@@ -24,7 +28,6 @@
     border: 1px solid var(--primary);
     border-radius: 10px;
     line-height: 1;
-    white-space: nowrap;
 
     &:hover {
       color: #fff;
