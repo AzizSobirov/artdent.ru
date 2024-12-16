@@ -12,8 +12,28 @@ const { id, title } = Astro.props;
 <Section name="hero">
   <H1 set:html={title} />
 
-  <div class="hero__img">
-    <Image class="hero__img-img" src={`hero/${id}.png`} alt={title} />
+  <div class="hero__right">
+    <Image
+      class="hero__right-img"
+      src={`hero/${id}.png`}
+      alt={title}
+      data-id={id}
+    />
+
+    <div class="hero__right-patients">
+      <p class="text-p text-gray">Здоровых пациентов</p>
+      <H3 class="text-default">1000+</H3>
+      <Image src="hero/graph.svg" />
+    </div>
+
+    <a href="/about" class="hero__right-about">
+      <Icon src="syringe.svg" />
+      <div class="flex-col">
+        <H3 class="text-default">О клинике</H3>
+        <p class="text-p text-gray">Подробнее</p>
+      </div>
+      <Icon src="chevron-right.svg" />
+    </a>
   </div>
 
   <div class="hero__swiper">
