@@ -10,13 +10,19 @@ body {
 }
 
 main {
+  padding-left: 350px;
   max-width: 100%;
   overflow: hidden;
+
+  @include media("3xl") {
+    padding-left: 300px;
+  }
+  @include media("xl") {
+    padding-left: 0;
+  }
 }
 
 section {
-  padding-left: 350px;
-
   @include media("lg") {
     padding: 30px 0;
   }

@@ -95,11 +95,21 @@
     color: var(--primary);
   }
 
-  @include media("lg") {
-    font-size: 28px;
+  @include media("3xl") {
+    font-size: 64px;
+    line-height: normal;
   }
-  @include media("sm") {
-    font-size: 20px;
+  @include media("xl") {
+    font-size: 56px;
+  }
+  @include media("lg") {
+    font-size: 44px;
+  }
+  @include media("xs") {
+    font-size: 36px;
+  }
+  @include media("xxs") {
+    font-size: 32px;
   }
 }
 
@@ -121,13 +131,17 @@
   font-weight: 700;
   text-transform: uppercase;
 
-  @include media("sm") {
-    font-size: 18px;
+  @include media("3xl") {
+    font-size: 20px;
   }
 }
 
 .text-p {
   font-size: 18px;
+
+  @include media("3xl") {
+    font-size: 16px;
+  }
 }
 
 .text-default {

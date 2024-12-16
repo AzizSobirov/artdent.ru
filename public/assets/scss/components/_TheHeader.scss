@@ -9,8 +9,13 @@
   transition: var(--transition-ease);
   z-index: 10;
 
-  @include media("lg") {
+  @include media("3xl") {
+    max-width: 300px;
+  }
+  @include media("xl") {
     position: static;
+    height: auto;
+    max-width: 100%;
   }
 
   .container {
@@ -23,7 +28,10 @@
     gap: 55px;
 
     @include media("3xl") {
-      padding-top: 60px;
+      padding-top: 40px;
+    }
+    @include media("lg") {
+      padding-top: 30px;
     }
   }
 
@@ -44,11 +52,19 @@
       flex-direction: column;
       align-items: center;
       gap: 50px;
+
+      @include media("3xl") {
+        gap: 40px;
+      }
     }
 
     .menu-item {
       font-size: 18px;
       transition: var(--transition-ease);
+
+      @include media("3xl") {
+        font-size: 16px;
+      }
 
       &:hover,
       &.active {
@@ -79,7 +95,7 @@
       position: absolute;
       padding: 15px;
       top: -20px;
-      left: calc(100% + 25px);
+      left: calc(100% + 20px);
       min-width: 210px;
       width: 100%;
       background: rgba(255, 255, 255, 0.5);
@@ -94,7 +110,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 12px;
+      gap: 15px;
 
       &.show {
         opacity: 1;
@@ -121,7 +137,7 @@
       }
     }
 
-    @include media("lg") {
+    @include media("xl") {
       display: none;
     }
   }
@@ -152,7 +168,7 @@
   display: none;
   z-index: 10;
 
-  @include media("lg") {
+  @include media("xl") {
     display: flex;
   }
   @include media("xs") {
@@ -212,16 +228,14 @@
     bottom: 90px;
     width: 100%;
     min-height: 345px;
+    max-height: calc(100vh - 120px);
     color: #fff;
-    background: #20232a;
+    background: #264065;
     border-radius: 15px;
     display: none;
     align-items: center;
     transition: var(--transition-ease);
-
-    &.bg-primary {
-      background: var(--primary);
-    }
+    overflow: auto;
 
     .menu {
       display: flex;
@@ -251,6 +265,10 @@
       gap: 35px;
       overflow-y: auto;
 
+      @include media("sm") {
+        gap: 25px;
+      }
+
       .menu-item {
         @include start(column, 10px);
       }
@@ -268,6 +286,10 @@
         background-color: #7a7d85;
         border-radius: 20px;
       }
+    }
+
+    #content {
+      width: 100%;
     }
   }
 

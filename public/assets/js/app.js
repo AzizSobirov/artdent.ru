@@ -188,7 +188,7 @@ let heroSwiper = new Swiper(".hero__swiper .swiper", {
   spaceBetween: 15,
   effect: "fade",
   loop: true,
-  // autoHeight: true,
+  autoHeight: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
@@ -199,5 +199,10 @@ let heroSwiper = new Swiper(".hero__swiper .swiper", {
   },
   navigation: {
     nextEl: ".hero__swiper .btn-next",
+  },
+  breakpoints: {
+    1281: {
+      autoHeight: false,
+    },
   },
 });

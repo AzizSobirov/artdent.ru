@@ -17,6 +17,10 @@
     &:hover {
       background: var(--secondary-light);
     }
+
+    @include media("3xl") {
+      font-size: 16px;
+    }
   }
 
   &.variant-outline {
@@ -30,6 +34,10 @@
     &:hover {
       color: #fff;
       background: var(--primary);
+    }
+
+    @include media("3xl") {
+      font-size: 16px;
     }
   }
 }
