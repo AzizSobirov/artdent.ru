@@ -1,0 +1,60 @@
+.pricing {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 65px;
+
+    @include media("3xl") {
+      gap: 50px;
+    }
+    @include media("lg") {
+      gap: 40px;
+    }
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    .text-desc {
+      padding-left: 75px;
+
+      @include media("3xl") {
+        padding-left: 60px;
+      }
+      @include media("lg") {
+        padding-left: 50px;
+      }
+      @include media("sm") {
+        padding-left: 35px;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 25px;
+
+    @include media("3xl") {
+      gap: 30px 20px;
+    }
+    @include media("lg") {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @include media("sm") {
+      gap: 15px;
+    }
+  }
+}

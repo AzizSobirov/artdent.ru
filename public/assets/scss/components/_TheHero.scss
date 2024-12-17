@@ -1,9 +1,16 @@
 .hero {
   position: relative;
-  padding-top: 80px;
+  margin-bottom: 190px;
+  padding: 0 !important;
 
   @include media("3xl") {
-    padding-top: 40px;
+    margin-bottom: 90px;
+  }
+  @include media("lg") {
+    margin-bottom: 40px;
+  }
+  @include media("sm") {
+    margin-bottom: 30px;
   }
 
   .container {

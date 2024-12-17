@@ -10,7 +10,7 @@
   z-index: 10;
 
   @include media("3xl") {
-    max-width: 300px;
+    max-width: 280px;
   }
   @include media("xl") {
     position: static;

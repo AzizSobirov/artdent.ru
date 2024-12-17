@@ -1,0 +1,43 @@
+---
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
+
+interface Props {
+  length: number;
+}
+
+const { length } = Astro.props;
+---
+
+<Section name="discounts">
+  <H2>АКЦИИ И СКИДКИ</H2>
+
+  <div class="discounts__list">
+    {
+      Array.from({ length: length }).map((_, index) => (
+        <div class="discounts__item">
+          <div class="discounts__item-img">
+            <div>
+              <Image src="discounts/1.png" />
+            </div>
+          </div>
+          <div class="discounts__item-content">
+            <H3> Скидка на протезирование</H3>
+            <p class="text-desc">
+              Весь Декабрь дарим 15% скидку на <br /> протезирование зубов в
+              нашей клинике
+            </p>
+            <div
+              class="btn variant-solid"
+              role="button"
+              tabindex="0"
+              aria-label="Подробнее"
+              data-modal="form"
+            >
+              Запись на прием
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>
