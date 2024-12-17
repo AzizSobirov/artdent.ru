@@ -182,6 +182,27 @@ if (header) {
   });
 }
 
+// Initialize the fancybox
+const fancyboxTriggers = Array.from(
+  document.querySelectorAll("[data-fancybox]")
+).filter((trigger) => trigger.dataset.fancybox);
+if (fancyboxTriggers) {
+  const fancyboxInstances = [];
+  fancyboxTriggers.forEach((trigger) => {
+    const name = trigger.dataset.fancybox;
+    if (fancyboxInstances.includes(name)) {
+      return; // Skip if already bound
+    }
+    // Add the name to the `fancyboxInstances` list
+    fancyboxInstances.push(name);
+  });
+  fancyboxInstances.forEach((name) => {
+    Fancybox.bind(`[data-fancybox="${name}"]`, {
+      Images: { Panzoom: { maxScale: 3 } },
+    });
+  });
+}
+
 // hero swiper
 let heroSwiper = new Swiper(".hero__swiper .swiper", {
   slidesPerView: 1,
