@@ -1,0 +1,76 @@
+---
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
+
+interface Props {
+  is_main?: boolean;
+  total?: number;
+  per_page?: number;
+}
+
+const { is_main = false, total = 6, per_page = 4 } = Astro.props;
+
+const getPage = (index: number) => {
+  return Math.floor(index / per_page) + 1;
+};
+---
+
+<Section name="doctors">
+  <H2>наши врачи</H2>
+
+  <div class="wrapper">
+    <div class="doctors__content">
+      <div class="doctors__list">
+        {
+          Array.from({ length: total }).map((_, index) => (
+            <div class="doctors__item" data-page={getPage(index)}>
+              <div class="doctors__item-img">
+                <Image src="doctors/1.png" />
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна {index}
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <a href="/doctors" class="btn">Все врачи</a>
+    </div>
+
+    <div class="doctors__swiper">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: total }).map((_, index) => (
+              <div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <Image src="doctors/1-poster.png" />
+                  </div>
+
+                  <div
+                    class="btn"
+                    role="button"
+                    data-fancybox="doctors"
+                    data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"
+                  />
+                </div>
+
+                <div class="doctors__card-content">
+                  <H3 class="text-default">Валерина Валерия Валерьевна</H3>
+                  <p class="text-job">Врач ортодонт {index}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

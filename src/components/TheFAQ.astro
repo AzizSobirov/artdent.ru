@@ -1,0 +1,56 @@
+---
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
+
+interface Props {
+  is_main?: boolean;
+  total?: number;
+  per_page?: number;
+}
+
+const { is_main = false, total = 6, per_page = 4 } = Astro.props;
+---
+
+<Section name="faq">
+  <H2>наши врачи</H2>
+
+  <div class="faq__content">
+    <div class="faq__list">
+      {
+        Array.from({ length: total }).map((_, index) => (
+          <div class="faq__item">
+            <span>Больно ли носить брекеты?</span>
+            <div
+              class="btn"
+              role="button"
+              data-fancybox="faq"
+              data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="faq__swiper">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: total }).map((_, index) => (
+              <div class="swiper-slide ">
+                <div class="bg-img">
+                  <Image src="stomotology.png" />
+                </div>
+
+                <div
+                  class="btn"
+                  role="button"
+                  data-fancybox="faq"
+                  data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

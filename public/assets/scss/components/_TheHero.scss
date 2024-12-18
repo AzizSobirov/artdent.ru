@@ -233,6 +233,7 @@
         background: var(--primary-light);
         border-radius: 3px;
         transition: var(--transition-ease);
+        opacity: 1 !important;
 
         &-active {
           transform: scale(1.1) rotate(45deg);

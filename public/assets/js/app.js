@@ -227,3 +227,108 @@ let heroSwiper = new Swiper(".hero__swiper .swiper", {
     },
   },
 });
+
+// doctors swiper
+// let doctorsThumbSwiper = new Swiper(".doctors__list .swiper", {
+//   slidesPerView: 2,
+//   spaceBetween: 32,
+//   grid: {
+//     rows: 2,
+//   },
+//   // effect: "fade",
+// });
+
+let doctorsSwiper = new Swiper(".doctors__swiper .swiper", {
+  slidesPerView: 1,
+  effect: "fade",
+  pagination: {
+    el: ".doctors__content .swiper-pagination",
+    clickable: true,
+  },
+  on: {
+    slideChange: function () {
+      const listItems = document.querySelectorAll(".doctors .doctors__item");
+
+      // Helper function to calculate the page
+      const getPage = (index) => Math.floor(index / 4) + 1;
+
+      // Hide all items initially
+      listItems.forEach((item) => {
+        item.style.display = "none";
+      });
+
+      // Show items corresponding to the current active index
+      listItems.forEach((item, index) => {
+        if (item.dataset.page == getPage(this.activeIndex)) {
+          item.style.display = "flex";
+        }
+      });
+    },
+  },
+});
+
+// doctors list
+const doctors = document.querySelector(".doctors");
+if (doctors) {
+  const list = doctors.querySelector(".doctors__list");
+  const listItem = doctors.querySelectorAll(".doctors__item");
+
+  listItem.forEach((item, index) => {
+    if (item.dataset.page !== "1") {
+      item.style.display = "none";
+    }
+
+    item.addEventListener("click", () => {
+      doctorsSwiper.slideTo(index);
+
+      window.scrollTo({
+        top: doctors.offsetTop,
+        behavior: "smooth",
+      });
+    });
+  });
+}
+
+let reviewsSwiper = new Swiper(".reviews__swiper .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 15,
+  navigation: {
+    nextEl: ".reviews__swiper .btn-next",
+    prevEl: ".reviews__swiper .btn-prev",
+  },
+  breakpoints: {
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1281: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+  },
+});
+
+// faq swiper
+
+let faqSwiper = new Swiper(".faq__swiper .swiper", {
+  slidesPerView: 1,
+  effect: "fade",
+});
+
+// faq list
+const faq = document.querySelector(".faq");
+if (faq) {
+  const list = faq.querySelector(".faq__list");
+  const listItem = faq.querySelectorAll(".faq__item");
+
+  listItem.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      faqSwiper.slideTo(index);
+
+      window.scrollTo({
+        top: faq.offsetTop,
+        behavior: "smooth",
+      });
+    });
+  });
+}

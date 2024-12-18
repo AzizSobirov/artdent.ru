@@ -1,0 +1,34 @@
+---
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
+---
+
+<Section name="reviews">
+  <H2>отзывы наших клиентов </H2>
+
+  <div class="reviews__swiper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          Array.from({ length: 6 }).map((_, index) => (
+            <div class="swiper-slide">
+              <div class="bg-img">
+                <Image src="reviews/1.png" />
+              </div>
+
+              <div
+                class="btn"
+                role="button"
+                data-fancybox="reviews"
+                data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"
+              />
+              <span>Смотрите видео отзыв</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="swiper-btn btn-prev"></div>
+    <div class="swiper-btn btn-next"></div>
+  </div>
+</Section>

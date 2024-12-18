@@ -1,0 +1,204 @@
+.faq {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 65px;
+
+    @include media("3xl") {
+      gap: 50px;
+    }
+    @include media("lg") {
+      gap: 40px;
+    }
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include media("lg") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__list {
+    direction: rtl;
+    position: relative;
+    padding-left: 10px;
+    margin-left: -10px;
+    width: calc(100% + 10px);
+    max-height: 528px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+
+    @include media("3xl") {
+      max-height: 418px;
+    }
+    @include media("lg") {
+      max-height: 100%;
+      gap: 20px;
+    }
+    @include media("sm") {
+      gap: 15px;
+    }
+
+    /* Customize the scrollbar */
+    &::-webkit-scrollbar {
+      width: 12px; /* Adjust to a comfortable size for usability */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--primary); /* Light background for contrast */
+      border-radius: 10px; /* Smooth edges */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
+      border-radius: 20px; /* Fully rounded for elegance */
+      border: 2.5px solid var(--primary); /* Adds spacing and ensures thumb doesn't feel cramped */
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent; /* Removes corner artifacts (useful for elements with both scrollbars) */
+    }
+  }
+
+  &__item {
+    direction: ltr;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 24px;
+    cursor: pointer;
+
+    @include media("lg") {
+      gap: 20px;
+    }
+    @include media("sm") {
+      gap: 10px;
+    }
+
+    span {
+      padding: 18px 40px;
+      min-height: 80px;
+      color: #fff;
+      background: var(--primary);
+      border-radius: 10px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-wrap: balance;
+
+      @include media("sm") {
+        padding: 10px 20px;
+        min-height: 60px;
+      }
+    }
+
+    .btn {
+      position: relative;
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--secondary);
+      background-image: url("../img/icons/play.svg");
+      background-position: center;
+      background-size: 16px auto;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+
+      @include media("sm") {
+        width: 60px;
+        background-size: 14px auto;
+      }
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    width: 100%;
+
+    @include media("lg") {
+      height: 400px;
+      order: -1;
+    }
+    @include media("sm") {
+      height: 280px;
+    }
+    @include media("xs") {
+      height: 240px;
+    }
+    @include media("xxs") {
+      height: 220px;
+    }
+
+    .swiper {
+      height: 100%;
+      display: grid;
+    }
+
+    .swiper-wrapper {
+      min-width: 0;
+    }
+
+    .swiper-slide {
+      opacity: 0 !important;
+
+      &.swiper-slide-active {
+        opacity: 1 !important;
+      }
+    }
+
+    .swiper-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      .bg-img {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.45);
+        }
+      }
+
+      .btn {
+        width: 84px;
+        height: 84px;
+        background: url("../img/icons/play-secondary.svg") center/contain
+          no-repeat;
+
+        @include media("xs") {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
+}

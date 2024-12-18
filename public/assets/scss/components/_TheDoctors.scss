@@ -1,0 +1,337 @@
+.doctors {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 65px;
+
+    @include media("3xl") {
+      gap: 50px;
+    }
+    @include media("lg") {
+      gap: 40px;
+    }
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  .wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include media("lg") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    @include media("sm") {
+      background: #ebfaff;
+      border-radius: 20px 20px 0 20px;
+      border: 1px solid #fff;
+    }
+
+    .btn {
+      width: 295px;
+      height: 70px;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 300;
+      background: var(--secondary);
+      border-radius: 15px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @include media("sm") {
+        margin: 20px auto;
+        width: calc(100% - 40px);
+        font-size: 20px;
+      }
+      @include media("xs") {
+        height: 65px;
+        font-size: 18px;
+      }
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      height: 70px;
+      left: 310px;
+      width: calc(100% - 310px);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      @include media("2xl") {
+        gap: 15px;
+      }
+      @include media("sm") {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+
+      &-bullet {
+        margin: 0 !important;
+        width: 16px;
+        height: 16px;
+        transform: rotate(45deg);
+        background: #dbdbdb;
+        border-radius: 3px;
+        transition: var(--transition-ease);
+        opacity: 1 !important;
+
+        &-active {
+          transform: scale(1.1) rotate(45deg);
+          background: var(--primary);
+        }
+
+        @include media("2xl") {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    background: #ebfaff;
+    border-radius: 20px 20px 0 20px;
+    border: 1px solid #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+
+    @include media("3xl") {
+      gap: 20px;
+    }
+    @include media("sm") {
+      grid-template-columns: 1fr;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    @include media("xs") {
+      padding: 10px;
+      gap: 10px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 290px;
+      transform: translateY(100%);
+      width: 20px;
+      height: 20px;
+      border-radius: 0 20px 0 0;
+      border-top: 1px solid #fff;
+      border-right: 1px solid #fff;
+      box-shadow: 5px -5px 0 #ebfaff;
+      z-index: 2;
+    }
+
+    &::after {
+      bottom: 1px;
+      left: 310px;
+      transform: translateY(100%);
+      width: calc(100% - 310px);
+      height: 82px;
+      background: #ebfaff;
+      border-radius: 0 0 20px 20px;
+      border: 1px solid #fff;
+      border-top: none;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    --img-width: 125px;
+
+    @include media("2xl") {
+      --img-width: 100px;
+    }
+
+    &-img {
+      position: relative;
+      max-height: 150px;
+      min-width: var(--img-width);
+      width: var(--img-width);
+      border-radius: 0 0 var(--img-width) var(--img-width);
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: var(--img-width);
+        height: var(--img-width);
+        background: var(--primary);
+        border-radius: 50%;
+      }
+
+      img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: bottom;
+      }
+    }
+
+    &-content {
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    strong,
+    b {
+      color: var(--primary);
+    }
+
+    p {
+      width: 100%;
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    width: 100%;
+
+    @include media("lg") {
+      order: -1;
+    }
+
+    .swiper {
+      height: 100%;
+      display: grid;
+    }
+
+    .swiper-wrapper {
+      min-width: 0;
+    }
+
+    .swiper-slide {
+      opacity: 0 !important;
+
+      &.swiper-slide-active {
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    @include media("xs") {
+      gap: 15px;
+    }
+
+    &-video {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      @include media("2xl") {
+        height: 380px;
+      }
+      @include media("sm") {
+        height: 320px;
+        gap: 15px;
+      }
+      @include media("xs") {
+        height: 240px;
+      }
+      @include media("xxs") {
+        height: 200px;
+      }
+
+      .btn {
+        width: 84px;
+        height: 84px;
+        background: url("../img/icons/play-primary.svg") center/contain
+          no-repeat;
+
+        @include media("xs") {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+
+    &-content {
+      padding: 15px;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+      background: var(--primary);
+      border-radius: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .text-default {
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}
