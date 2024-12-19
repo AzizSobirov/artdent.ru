@@ -1,0 +1,62 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import TheForm from "../components/TheForm.astro";
+import ThePrice from "../components/ThePrice.astro";
+---
+
+<App title="Цены">
+  <main>
+    <!-- ThePrice -->
+    <ThePrice
+      title="Цены на брекеты"
+      list={[
+        "Металлическая брекет-система (на один зубной ряд)",
+        "Керамическая брекет-система (на один зубной ряд)",
+        "Сапфировая брекет-система (на один зубной ряд)",
+      ]}
+    />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на элайнеры" list={["Элайнеры"]} />
+    <!-- ThePrice -->
+    <ThePrice
+      title="Цены на имплантацию зубов"
+      list={["Имплантация", "Закрытый синус-лифтинг", "Открытый синус-лифтинг"]}
+    />
+    <!-- ThePrice -->
+    <ThePrice
+      title="Цены на протезирование зубов"
+      list={[
+        "Бюгельный протез",
+        "Нейлоновый частично-съемный протез",
+        "Бюгельный протез МК на 1 челюсть",
+        "Acry Free протез на 1 челюсть",
+        "Акриловый протез на 1 челюсть",
+        "Защитная капа при бруксизме на 1 челюсть",
+        "Иммедиат - протез",
+      ]}
+    />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на виниры" list={["Виниры"]} />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на зубные коронки" list={["Зубные коронки"]} />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на чистку зубов" list={["Виниры"]} />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на лечение кариеса" list={["Лечение кариеса"]} />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на лечение пульпита" list={["Лечение пульпита"]} />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на удаление зубов" list={["Удаление зуба"]} />
+    <!-- TheForm -->
+    <TheForm />
+  </main>
+</App>

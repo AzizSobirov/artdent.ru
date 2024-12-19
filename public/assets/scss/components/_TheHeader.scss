@@ -54,7 +54,7 @@
       gap: 50px;
 
       @include media("3xl") {
-        gap: 40px;
+        gap: 30px;
       }
     }
 
@@ -297,5 +297,17 @@
     position: absolute;
     top: 22px;
     right: 25px;
+  }
+
+  .header__contact {
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    &-phone {
+      color: #fff;
+      font-size: 18px;
+    }
   }
 }

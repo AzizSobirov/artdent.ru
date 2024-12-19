@@ -1,0 +1,93 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import TheForm from "../components/TheForm.astro";
+import ThePrice from "../components/ThePrice.astro";
+---
+
+<App title="Контакты">
+  <main>
+    <!-- TheContacts -->
+    <Section name="contacts">
+      <H2>Наши контакты</H2>
+      <div class="contacts__content">
+        <div class="contacts__info">
+          <div class="contacts__info-ceo">
+            <Image src="ceo.png" />
+            <div class="flex-col">
+              <div class="ceo-name">Алиев Марат Расулович</div>
+              <div class="text-p uppercase">главный врач</div>
+            </div>
+          </div>
+
+          <ul class="contacts__info-list">
+            <li>
+              <Icon src="marker.svg" />
+              <p class="text-p">г.Москва, ул. Пудовкина 5</p>
+            </li>
+            <li>
+              <a href="tel:+74957790145" target="_blank" title="Телефон">
+                <Icon src="phone.svg" />
+                <p class="text-p">+7 (495) 799-01-45</p>
+              </a>
+            </li>
+            <li>
+              <Icon src="clock.svg" />
+              <p class="text-p">Пн-Вс 11:00 - 21:00</p>
+            </li>
+          </ul>
+
+          <div class="text-p">
+            ООО «МГМ-групп» <br /> 119285, Москва, ул. Пудовкина, д. 5 <br /> ИНН:
+            7705699084 <br /> КПП: 772901001 <br /> Р/с: 40702810580800001200 <br
+            /> Банк: ЗАО «КРЕДИТ ЕВРОПА БАНК» г. Москва <br />К/с:
+            30101810900000000767 <br />БИК: 044525767
+          </div>
+        </div>
+
+        <iframe
+          class="contacts__map"
+          src="https://yandex.uz/map-widget/v1/org/artdent/1067447758/?ll=37.529740%2C55.726815&source=serp_navig&z=17"
+          width="560"
+          height="400"
+          allowfullscreen="true"></iframe>
+      </div>
+    </Section>
+
+    <!-- TheLicense -->
+    <Section name="license">
+      <H2>Наши лицензии и сертификаты</H2>
+      <div class="license__list">
+        <div
+          class="license__list-item"
+          data-fancybox="license"
+          data-src="./assets/img/license/1.png"
+        >
+          <Image src="license/1.png" />
+        </div>
+        <div
+          class="license__list-item"
+          data-fancybox="license"
+          data-src="./assets/img/license/2.png"
+        >
+          <Image src="license/2.png" />
+        </div>
+        <div
+          class="license__list-item"
+          data-fancybox="license"
+          data-src="./assets/img/license/3.png"
+        >
+          <Image src="license/3.png" />
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

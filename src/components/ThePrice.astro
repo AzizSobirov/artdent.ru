@@ -1,0 +1,31 @@
+---
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
+
+interface Props {
+  title: string;
+  list: string[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<Section name="price">
+  <H2>{title}</H2>
+
+  <ul class="price__list">
+    {
+      list.map((item) => (
+        <li class="price__item">
+          <div class="price__item-title">{item}</div>
+
+          <span class="price__item-discount">Акция до 1 января</span>
+
+          <div class="price__item-prices">
+            <div class="price__item-realprice">99 999₽</div>
+            <div class="price__item-price">19 999₽</div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Section>

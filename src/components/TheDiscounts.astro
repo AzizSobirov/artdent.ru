@@ -2,10 +2,10 @@
 import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
 
 interface Props {
-  length: number;
+  total: number;
 }
 
-const { length } = Astro.props;
+const { total } = Astro.props;
 ---
 
 <Section name="discounts">
@@ -13,7 +13,7 @@ const { length } = Astro.props;
 
   <div class="discounts__list">
     {
-      Array.from({ length: length }).map((_, index) => (
+      Array.from({ length: total }).map((_, index) => (
         <div class="discounts__item">
           <div class="discounts__item-img">
             <div>

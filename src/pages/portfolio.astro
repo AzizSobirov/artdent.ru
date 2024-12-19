@@ -1,0 +1,85 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import TheForm from "../components/TheForm.astro";
+---
+
+<App title="Наши работы">
+  <main>
+    <!-- ThePortfolio -->
+    <Section name="portfolio">
+      <H2>Наши работы</H2>
+
+      <div class="portfolio__content">
+        <div class="portfolio__filter">
+          <div class="portfolio__filter-item active" data-category="Все">
+            Все
+          </div>
+          <div class="portfolio__filter-item" data-category="Протезирование">
+            Протезирование
+          </div>
+          <div class="portfolio__filter-item" data-category="Имплантация">
+            Имплантация
+          </div>
+          <div class="portfolio__filter-item" data-category="Брекеты">
+            Брекеты
+          </div>
+          <div class="portfolio__filter-item" data-category="Реставрация">
+            Реставрация
+          </div>
+        </div>
+
+        <div class="portfolio__list">
+          {
+            Array.from({ length: 3 }).map((_, index) => (
+              <>
+                <div
+                  class="portfolio__list-item"
+                  data-category="Протезирование"
+                  data-fancybox="portfolio"
+                  data-src="./assets/img/portfolio/1.png"
+                >
+                  <Image src="portfolio/1.png" />
+                </div>
+                <div
+                  class="portfolio__list-item"
+                  data-category="Имплантация"
+                  data-fancybox="portfolio"
+                  data-src="./assets/img/portfolio/2.png"
+                >
+                  <Image src="portfolio/2.png" />
+                </div>
+                <div
+                  class="portfolio__list-item"
+                  data-category="Брекеты"
+                  data-fancybox="portfolio"
+                  data-src="./assets/img/portfolio/3.png"
+                >
+                  <Image src="portfolio/3.png" />
+                </div>
+                <div
+                  class="portfolio__list-item"
+                  data-category="Реставрация"
+                  data-fancybox="portfolio"
+                  data-src="./assets/img/portfolio/3.png"
+                >
+                  <Image src="portfolio/3.png" />
+                </div>
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+  </main>
+</App>
