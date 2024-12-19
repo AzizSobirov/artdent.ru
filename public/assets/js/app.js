@@ -182,6 +182,71 @@ if (header) {
   });
 }
 
+// form
+function successSend() {
+  modal.open("success");
+
+  setTimeout(() => {
+    modal.close();
+  }, 3000);
+}
+
+const forms = document.querySelectorAll("form");
+forms.forEach((form) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    successSend();
+  });
+});
+
+// init phone mask
+const phoneMasks = document.querySelectorAll("input[name='phone']");
+phoneMasks.forEach((input) => {
+  let keyCode;
+  function mask(event) {
+    event.keyCode && (keyCode = event.keyCode);
+    let pos = this.selectionStart;
+    if (pos < 3) event.preventDefault();
+    let matrix = "+7 (___) ___-__-__",
+      i = 0,
+      def = matrix.replace(/\D/g, ""),
+      val = this.value.replace(/\D/g, ""),
+      newValue = matrix.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+      });
+    i = newValue.indexOf("_");
+    if (i != -1) {
+      i < 5 && (i = 3);
+      newValue = newValue.slice(0, i);
+    }
+    let reg = matrix
+      .substr(0, this.value.length)
+      .replace(/_+/g, function (a) {
+        return "\\d{1," + a.length + "}";
+      })
+      .replace(/[+()]/g, "\\$&");
+    reg = new RegExp("^" + reg + "$");
+    if (
+      !reg.test(this.value) ||
+      this.value.length < 5 ||
+      (keyCode > 47 && keyCode < 58)
+    )
+      this.value = newValue;
+    if (event.type == "blur" && this.value.length < 5) this.value = "";
+
+    if (this.value.length == 18 || this.value.length == 0) {
+      input.dataset.numbervalid = "true";
+    } else {
+      input.dataset.numbervalid = "false";
+    }
+  }
+
+  input.addEventListener("input", mask, false);
+  input.addEventListener("focus", mask, false);
+  input.addEventListener("blur", mask, false);
+  input.addEventListener("keydown", mask, false);
+});
+
 // Initialize the fancybox
 const fancyboxTriggers = Array.from(
   document.querySelectorAll("[data-fancybox]")
@@ -229,15 +294,6 @@ let heroSwiper = new Swiper(".hero__swiper .swiper", {
 });
 
 // doctors swiper
-// let doctorsThumbSwiper = new Swiper(".doctors__list .swiper", {
-//   slidesPerView: 2,
-//   spaceBetween: 32,
-//   grid: {
-//     rows: 2,
-//   },
-//   // effect: "fade",
-// });
-
 let doctorsSwiper = new Swiper(".doctors__swiper .swiper", {
   slidesPerView: 1,
   effect: "fade",
@@ -247,22 +303,25 @@ let doctorsSwiper = new Swiper(".doctors__swiper .swiper", {
   },
   on: {
     slideChange: function () {
-      const listItems = document.querySelectorAll(".doctors .doctors__item");
+      const list = document.querySelector(".doctors .doctors__list");
+      const listItems = list.querySelectorAll(".doctors__item");
 
       // Helper function to calculate the page
       const getPage = (index) => Math.floor(index / 4) + 1;
 
-      // Hide all items initially
-      listItems.forEach((item) => {
-        item.style.display = "none";
-      });
+      if (!list.classList.contains("is-main")) {
+        // Hide all items initially
+        listItems.forEach((item) => {
+          item.style.display = "none";
+        });
 
-      // Show items corresponding to the current active index
-      listItems.forEach((item, index) => {
-        if (item.dataset.page == getPage(this.activeIndex)) {
-          item.style.display = "flex";
-        }
-      });
+        // Show items corresponding to the current active index
+        listItems.forEach((item, index) => {
+          if (item.dataset.page == getPage(this.activeIndex)) {
+            item.style.display = "flex";
+          }
+        });
+      }
     },
   },
 });
@@ -274,7 +333,7 @@ if (doctors) {
   const listItem = doctors.querySelectorAll(".doctors__item");
 
   listItem.forEach((item, index) => {
-    if (item.dataset.page !== "1") {
+    if (item.dataset.page !== "1" && !list.classList.contains("is-main")) {
       item.style.display = "none";
     }
 
@@ -289,6 +348,7 @@ if (doctors) {
   });
 }
 
+// reviews swiper
 let reviewsSwiper = new Swiper(".reviews__swiper .swiper", {
   slidesPerView: "auto",
   spaceBetween: 15,
@@ -309,7 +369,6 @@ let reviewsSwiper = new Swiper(".reviews__swiper .swiper", {
 });
 
 // faq swiper
-
 let faqSwiper = new Swiper(".faq__swiper .swiper", {
   slidesPerView: 1,
   effect: "fade",

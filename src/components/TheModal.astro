@@ -4,19 +4,16 @@ import TheForm from "./TheForm.astro";
 
 <div class="modal-overlay">
   <div class="modal" data-template="form">
-    <button class="close-button" data-modal="close">&times;</button>
-    <div class="modal-content">
-      <h2>Form Modal</h2>
-      <p>Fill out the form in this modal.</p>
-      <button data-modal="success">Open Success Modal</button>
+    <div class="container">
+      <div class="btn-close" data-modal="close"></div>
+      <TheForm is_main={false} />
     </div>
   </div>
 
   <div class="modal" data-template="success">
-    <button class="close-button" data-modal="close">&times;</button>
-    <div class="modal-content">
-      <h2>Success Modal</h2>
-      <p>Your action was successful!</p>
+    <div class="container">
+      <div class="btn-close" data-modal="close"></div>
+      <TheForm success={true} is_main={false} />
     </div>
   </div>
 </div>

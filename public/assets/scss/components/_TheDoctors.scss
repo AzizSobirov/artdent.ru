@@ -172,6 +172,15 @@
       border: 1px solid #fff;
       border-top: none;
     }
+
+    &.is-main {
+      border-radius: 20px;
+
+      &::before,
+      &::after {
+        display: none !important;
+      }
+    }
   }
 
   &__item {
@@ -248,6 +257,10 @@
     .swiper {
       height: 100%;
       display: grid;
+
+      &.is-main {
+        height: fit-content;
+      }
     }
 
     .swiper-wrapper {

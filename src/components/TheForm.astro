@@ -1,51 +1,90 @@
 ---
-import { H2, H3 } from "ui";
+import { Section, H2, H3 } from "ui";
 
 interface Props {
   success?: boolean;
   id?: string;
+  is_main?: boolean;
 }
 
-const { success = false, id = "form" } = Astro.props;
+const { success = false, id = "form", is_main = true } = Astro.props;
 ---
 
-<div class="form">
-  {
-    success ? (
-      <>
-        <H3>Спасибо за Вашу заявку!</H3>
-        <div class="text-desc">
-          Наши менеджеры уже бьются за право позвонить Вам для уточнения
-          деталей, как только определится победитель - он Вам позвонит :)
-        </div>
-      </>
-    ) : (
-      <>
-        <H3>Проверьте объявление бесплатно</H3>
-        <div class="text-desc">
-          Получите бесплатный анализ объявления вместо того, что бы сразу
-          отдавать деньги возможным обманщикам
-        </div>
-        <form id={id}>
-          <input
-            type="url"
-            name="link"
-            placeholder="Ссылка на объявление"
-            required
-          />
-          <input type="text" name="name" placeholder="Ваше имя" required />
-          <input
-            type="text"
-            name="phone"
-            placeholder="Номер телефона"
-            required
-          />
-          <button type="submit">Проверить объявление</button>
-        </form>
-        <div class="text-xs">
-          Отправляя заявку я даю согласие на обработку персональных данных
-        </div>
-      </>
-    )
-  }
-</div>
+{
+  is_main ? (
+    <Section name="application">
+      <div class="form">
+        {success ? (
+          <>
+            <div class="form-title">Спасибо за Вашу заявку!</div>
+            <div class="form-desc">
+              Наши менеджеры уже бьются за право позвонить Вам для уточнения
+              деталей, как только определится победитель - он Вам позвонит :)
+            </div>
+          </>
+        ) : (
+          <>
+            <div class="form-title">не откладывайте лечение</div>
+            <div class="form-desc">
+              Запишитесь прямо сейчас на бесплатный осмотр и консультацию.
+            </div>
+            <form id={id}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Введите имя"
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Номер телефона"
+                required
+              />
+              <button type="submit">Запись на прием</button>
+              <div class="text-xs">
+                Нажимая кнопку вы даете согласие на обработку персональных
+                данных <br /> и соглашаетесь с Политикой конфеденциальности
+              </div>
+            </form>
+          </>
+        )}
+      </div>
+    </Section>
+  ) : (
+    <div class="form" class:list={{ success }}>
+      {success ? (
+        <>
+          <div class="form-title">Спасибо за вашу заявку</div>
+          <div class="form-desc">
+            Наш менеджер скоро свяжется с Вами для уточнения деталей
+          </div>
+          <button type="button" data-modal="close">
+            Закрыть
+          </button>
+        </>
+      ) : (
+        <>
+          <div class="form-title">не откладывайте лечение</div>
+          <div class="form-desc">
+            Запишитесь прямо сейчас на бесплатный осмотр и консультацию.
+          </div>
+          <form id={id}>
+            <input type="text" name="name" placeholder="Введите имя" required />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Номер телефона"
+              required
+            />
+            <button type="submit">Запись на прием</button>
+            <div class="text-xs">
+              Нажимая кнопку вы даете согласие на обработку персональных данных
+              <br /> и соглашаетесь с Политикой конфеденциальности
+            </div>
+          </form>
+        </>
+      )}
+    </div>
+  )
+}

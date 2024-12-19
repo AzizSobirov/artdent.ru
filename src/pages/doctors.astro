@@ -1,0 +1,24 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import TheForm from "../components/TheForm.astro";
+---
+
+<App title="Врачи">
+  <main>
+    <!-- TheDoctors -->
+    <TheDoctors total={8} is_main />
+    <!-- TheAbout -->
+    <TheAbout />
+    <!-- TheForm -->
+    <TheForm />
+  </main>
+</App>

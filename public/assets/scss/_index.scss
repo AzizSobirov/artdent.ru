@@ -11,7 +11,7 @@ body {
 
 main {
   padding-top: 80px;
-  padding-left: 350px;
+  padding-left: 320px;
   max-width: 100%;
   overflow: hidden;
 
@@ -26,6 +26,10 @@ main {
 
 section {
   padding: 50px 0;
+
+  &:first-child {
+    padding-top: 10px;
+  }
 
   @include media("lg") {
     padding: 30px 0;

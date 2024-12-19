@@ -2,16 +2,37 @@
   position: relative;
 
   .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 65px;
 
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      z-index: -2;
+      right: 20px;
+      width: 490px;
+      height: 325px;
+      background: url("../img/about-shapes.svg") center/contain no-repeat;
+      pointer-events: none;
+    }
+
     @include media("3xl") {
       gap: 50px;
+
+      &::after {
+        width: 480px;
+      }
     }
     @include media("lg") {
       gap: 40px;
+
+      &::after {
+        display: none;
+      }
     }
     @include media("sm") {
       gap: 30px;
