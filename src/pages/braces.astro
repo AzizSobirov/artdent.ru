@@ -1,0 +1,200 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Главная">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="2" title="<span>брекеты под ключ</span><br/> в москве" />
+    <!-- ThePrice -->
+    <ThePrice
+      title="Цены на брекеты"
+      list={[
+        "Металлическая брекет-система (на один зубной ряд)",
+        "Керамическая брекет-система (на один зубной ряд)",
+        "Сапфировая брекет-система (на один зубной ряд)",
+      ]}
+    />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheBraces -->
+    <Section name="braces">
+      <H2>Что такое брекеты</H2>
+      <div class="braces__content">
+        <p class="braces-desc">
+          Брекет-система — это ортодонтическая несъемная конструкция для
+          коррекции положения отдельных зубов и исправления патологии прикуса.
+        </p>
+
+        <div class="braces__warranty">
+          <Image src="braces-warranty.png" />
+        </div>
+
+        <div class="braces__img">
+          <Image src="braces-img.png" />
+        </div>
+
+        <ul class="braces__list">
+          <li class="braces__list-item">
+            <p class="braces__list-desc">
+              <span> Основание брекета</span> с помощью композитного материала
+              фиксируется к поверхности зуба.
+            </p>
+            <span class="braces__list-number">01</span>
+          </li>
+          <li class="braces__list-item">
+            <p class="braces__list-desc">
+              В паз брекета вставляется <span> ортодонтическая дуга</span>.
+              Некоторые виды брекетов имеют дополнительный паз для
+              вспомогательных элементов.
+            </p>
+            <span class="braces__list-number">02</span>
+          </li>
+          <li class="braces__list-item">
+            <p class="braces__list-desc">
+              С помощью «крыльев» на брекетов крепится <span>лигатура</span> - специальный
+              элемент, используемый для надежной фиксации дуги в паз брекета.
+            </p>
+            <span class="braces__list-number">03</span>
+          </li>
+        </ul>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheTreatmentSteps -->
+    <Section name="treatment-steps">
+      <H2>Как проводится лечение</H2>
+      <div class="treatment-steps__content">
+        <ol class="treatment-steps__list">
+          <li class="treatment-steps__list-item active" data-step="1">
+            1. диагностика и расчеты
+          </li>
+          <li class="treatment-steps__list-item" data-step="2">
+            2. подготовка полости рта
+          </li>
+          <li class="treatment-steps__list-item" data-step="3">Фиксация</li>
+          <li class="treatment-steps__list-item" data-step="4">
+            3. лечение и корректировки
+          </li>
+          <li class="treatment-steps__list-item" data-step="5">
+            4. Снятие системы
+          </li>
+          <li class="treatment-steps__list-item" data-step="6">
+            5. гигиена после снятия
+          </li>
+          <li class="treatment-steps__list-item" data-step="7">
+            6. ретенционный период
+          </li>
+        </ol>
+
+        <div class="treatment-steps__info">
+          {
+            Array.from({ length: 7 }, (_, index) => (
+              <div class="treatment-steps__info-item" data-step={index + 1}>
+                <Image src="steps/1.png" />
+                <p class="text-p">
+                  Проводятся необходимые рентгенологические исследования для
+                  оценки состояния твердых и мягких тканей челюстно-лицевой
+                  области, а также сопутствующих аномалий
+                </p>
+
+                {index + 1}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+    <!-- TheBracesSystem -->
+    <Section name="braces-system">
+      <H2>Виды брекет-систем</H2>
+
+      <div class="braces-system__list">
+        <div class="braces-system__item">
+          <Image src="braces-system/1.png" />
+          <div class="flex-col">
+            <H3>Металлические брекеты</H3>
+            <p>
+              Применяются чаще всего. Они изготовлены из нержавеющей стали или
+              титана, что обеспечивает долговечность и надёжность. Эти системы
+              заметны на зубах, но эффективны. Сегодня выпускают миниатюрные
+              модели, улучшающие внешний вид улыбки.
+            </p>
+          </div>
+        </div>
+        <div class="braces-system__item">
+          <Image src="braces-system/2.png" />
+          <div class="flex-col">
+            <H3>Керамические брекеты</H3>
+            <p>
+              Эстетичнее. Изготавливаются из керамики, что делает их менее
+              заметными на зубах. Однако они более хрупкие по сравнению с
+              металлическими аналогами. Требуют тщательного ухода и более
+              дорогие. Зачастую выбираются взрослыми пациентами, которые ценят
+              эстетичный вид.
+            </p>
+          </div>
+        </div>
+        <div class="braces-system__item">
+          <Image src="braces-system/3.png" />
+          <div class="flex-col">
+            <H3>Сапфировые брекеты</H3>
+            <p>
+              Представляют собой один из самых эстетичных вариантов.
+              Производятся из прозрачных монокристаллов сапфира. Почти не видны
+              на зубах, подходят для тех, кто стремится к идеальному виду своей
+              улыбки на время лечения. Но стоят значительно дороже.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-p">
+        Выбор брекет-системы зависит от ваших предпочтений, требований к
+        внешнему виду и комфорту, а также от рекомендаций вашего ортодонта,
+        основанных на состоянии ваших зубов и особенностях прикуса. Существуют
+        различные виды брекетов: металлические, керамические, сапфировые и
+        лингвальные, каждый из которых имеет свои преимущества. Металлические
+        брекеты прочные и доступные, керамические и сапфировые – более
+        эстетичные и менее заметны, а лингвальные устанавливаются с внутренней
+        стороны зубов, что делает их практически невидимыми.
+        <br /><br />
+        Подобрать подходящий вариант поможет специалист после осмотра и  анализа
+        диагностических исследований.
+      </div>
+
+      <div
+        class="btn variant-solid"
+        role="button"
+        tabindex="0"
+        aria-label="Запись на прием"
+        data-modal="form"
+      >
+        Запись на прием
+      </div>
+    </Section>
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

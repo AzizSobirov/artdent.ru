@@ -1,0 +1,62 @@
+---
+import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
+---
+
+<Section name="projects">
+  <H2>наши работы</H2>
+
+  <div class="projects__swiper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          Array.from({ length: 6 }).map((_, index) => (
+            <div class="swiper-slide slide">
+              <div class="slide__img">
+                <Image
+                  class="active"
+                  data-status="before"
+                  src="projects/1-before.png"
+                />
+                <Image data-status="after" src="projects/1-after.png" />
+
+                <div class="btn">
+                  <span class="active" data-status="before">
+                    до
+                  </span>
+                  <span data-status="after">после</span>
+                </div>
+              </div>
+              <div class="slide__content">
+                <H3>Ортодонтическое лечение</H3>
+                <p class="slide__content-desc">
+                  Ортодонтическое лечение на металлической брекет-системе
+                  <br />
+                  <br />
+                  Время лечения: 2 года (с учетом терапии)
+                </p>
+
+                <div
+                  class="btn variant-solid"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Запись на прием"
+                  data-modal="form"
+                >
+                  Запись на прием
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="projects__swiper-footer">
+      <div class="swiper-pagination"></div>
+      <div class="swiper-nav">
+        <div class="swiper-btn btn-prev"></div>
+        <div class="swiper-btn btn-next"></div>
+      </div>
+    </div>
+  </div>
+</Section>

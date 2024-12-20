@@ -4,9 +4,10 @@ import { Section, H1, H2, H3, H4, Image, Icon } from "ui";
 interface Props {
   id: string;
   title: string;
+  is_main?: boolean;
 }
 
-const { id, title } = Astro.props;
+const { id, title, is_main = false } = Astro.props;
 ---
 
 <Section name="hero">
@@ -26,14 +27,18 @@ const { id, title } = Astro.props;
       <Image src="hero/graph.svg" />
     </div>
 
-    <a href="/about" class="hero__right-about">
-      <Icon src="syringe.svg" />
-      <div class="flex-col">
-        <H3 class="text-default">О клинике</H3>
-        <p class="text-p text-gray">Подробнее</p>
-      </div>
-      <Icon src="chevron-right.svg" />
-    </a>
+    {
+      is_main && (
+        <a href="/about" class="hero__right-about">
+          <Icon src="syringe.svg" />
+          <div class="flex-col">
+            <H3 class="text-default">О клинике</H3>
+            <p class="text-p text-gray">Подробнее</p>
+          </div>
+          <Icon src="chevron-right.svg" />
+        </a>
+      )
+    }
   </div>
 
   <div class="hero__swiper">

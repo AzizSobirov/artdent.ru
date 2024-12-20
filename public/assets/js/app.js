@@ -212,6 +212,34 @@ if (portfolio) {
   });
 }
 
+// treatment steps
+const treatmentSteps = document.querySelector(".treatment-steps");
+if (treatmentSteps) {
+  const filterItems = treatmentSteps.querySelectorAll(
+    ".treatment-steps__list-item"
+  );
+  const listItems = treatmentSteps.querySelectorAll(
+    ".treatment-steps__info-item"
+  );
+
+  filterItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      filterItems.forEach((i) => {
+        i.classList.remove("active");
+      });
+      item.classList.add("active");
+
+      listItems.forEach((_item) => {
+        if (_item.dataset.step !== item.dataset.step) {
+          _item.style.display = "none";
+        } else {
+          _item.style.display = "flex";
+        }
+      });
+    });
+  });
+}
+
 // hero swiper
 let heroSwiper = new Swiper(".hero__swiper .swiper", {
   slidesPerView: 1,
@@ -331,6 +359,72 @@ if (faq) {
       window.scrollTo({
         top: faq.offsetTop,
         behavior: "smooth",
+      });
+    });
+  });
+}
+
+// projects swiper
+let projectsSwiper = new Swiper(".projects__swiper .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  navigation: {
+    nextEl: ".projects__swiper .btn-next",
+    prevEl: ".projects__swiper .btn-prev",
+  },
+  pagination: {
+    el: ".projects__swiper .swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    1025: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+  },
+  on: {
+    slideChange: function () {
+      if (window.innerWidth > 1024) {
+        const activeIndex = this.activeIndex;
+
+        this.slides.forEach((slide, index) => {
+          if (index < activeIndex) {
+            // Hide slides before active slide
+            slide.classList.add("visibility-hidden");
+          } else {
+            // Show current and next slides
+            slide.classList.remove("visibility-hidden");
+          }
+        });
+      }
+    },
+  },
+});
+
+const projects = document.querySelector(".projects");
+if (projects) {
+  const slides = projects.querySelectorAll(
+    ".projects__swiper .swiper .swiper-slide"
+  );
+
+  slides.forEach((slide, index) => {
+    const images = slide.querySelectorAll("img");
+    const btns = slide.querySelectorAll(".btn span");
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+        btn.classList.add("active");
+
+        images.forEach((image) => {
+          if (image.dataset.status == btn.dataset.status) {
+            image.classList.add("active");
+          } else {
+            image.classList.remove("active");
+          }
+        });
       });
     });
   });
