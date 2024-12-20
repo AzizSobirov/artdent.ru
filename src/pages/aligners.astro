@@ -1,0 +1,68 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Элайнеры">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="3" title="<span>Элайнеры под ключ</span><br/> в москве" />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на элайнеры" list={["Элайнеры"]} />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheAligners -->
+    <Section name="aligners">
+      <H2>Что такое элайнеры</H2>
+      <div class="aligners__content">
+        <p class="aligners-desc">
+          Элайнеры – новейшая комфортная система выравнивания зубов. Это
+          прозрачные капы из особого пластика, которые мягко и незаметно
+          корректируют вашу улыбку, возвращая зубам здоровье, а вам уверенность
+          в себе.
+          <br />
+          <br />
+          Элайнеры легко устанавливаются и снимаются самостоятельно, не ощущаются
+          при ношении, просты в уходе и неприхотливы в эксплуатации. Они отлично
+          подойдут людям, которые по разным причинам не хотят ставить брекеты.
+          <br />
+          <br />
+          По мере лечения капы меняются на новые, которые уже входят в стоимость
+          набора. По окончании вы сможете смело улыбаться, смеяться во весь рот или
+          даже сняться в голливудском фильме.
+        </p>
+
+        <div class="aligners__warranty">
+          <Image src="braces-warranty.png" />
+        </div>
+
+        <div class="aligners__img">
+          <Image src="aligners-img.png" />
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

@@ -22,7 +22,7 @@
 
   .text-h1 {
     width: 100%;
-    max-width: 780px;
+    max-width: 880px;
 
     @include media("sm") {
       text-wrap: balance;
@@ -115,6 +115,38 @@
         @include media("xs") {
           width: 380px;
           transform: translate(20%, -10%);
+        }
+      }
+
+      &[data-id="3"] {
+        width: 980px;
+        height: 700px;
+        object-fit: cover;
+        object-position: center;
+        transform: translateX(0%) translateY(0%);
+
+        @include media("3xl") {
+          width: 780px;
+          height: auto;
+        }
+        @include media("2xl") {
+          width: 680px;
+          transform: translate(10%, 15%);
+        }
+        @include media("xl") {
+          transform: translate(10%, 0);
+        }
+        @include media("lg") {
+          width: 620px;
+          transform: translate(10%, 0%);
+        }
+        @include media("sm") {
+          width: 480px;
+          transform: translate(20%, 20%);
+        }
+        @include media("xs") {
+          width: 380px;
+          transform: translate(20%, 5%);
         }
       }
     }
