@@ -1,0 +1,167 @@
+.container {
+  margin: 0 auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+  width: 100%;
+  max-width: calc(var(--content-width) + var(--content-padding) * 2);
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  --position: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--position);
+  }
+}
+
+.icon {
+  min-width: var(--icon-size, 24px);
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  display: block;
+
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.text-white {
+  color: #fff;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-h1 {
+  font-size: 72px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.3;
+
+  span {
+    color: var(--primary);
+  }
+
+  @include media("3xl") {
+    font-size: 64px;
+    line-height: normal;
+  }
+  @include media("xl") {
+    font-size: 56px;
+  }
+  @include media("lg") {
+    font-size: 44px;
+  }
+  @include media("xs") {
+    font-size: 36px;
+  }
+  @include media("xxs") {
+    font-size: 32px;
+  }
+}
+
+.text-h2 {
+  padding-left: 75px;
+  color: var(--primary);
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: url('data:image/svg+xml,<svg width="58" height="50" viewBox="0 0 58 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.34315 19.3432C-0.781049 22.4674 -0.781048 27.5327 2.34315 30.6569L16.0147 44.3285C18.2213 46.535 21.3962 47.1831 24.1716 46.2728C23.0174 45.8942 21.9323 45.2461 21.0147 44.3285L7.34315 30.6569C4.21895 27.5327 4.21895 22.4674 7.34315 19.3432L21.0147 5.67164C21.9323 4.75402 23.0174 4.10592 24.1716 3.72733C21.3962 2.81696 18.2213 3.46506 16.0147 5.67164L2.34315 19.3432Z" fill="%236194E0"/><rect x="7.68628" y="25" width="35.3345" height="35.3345" rx="8" transform="rotate(-45 7.68628 25)" fill="%236194E0"/></svg>');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 58px auto;
+
+  @include media("3xl") {
+    padding-left: 60px;
+    font-size: 36px;
+    background-size: 48px auto;
+  }
+  @include media("lg") {
+    padding-left: 50px;
+    font-size: 28px;
+    background-size: 38px auto;
+  }
+  @include media("sm") {
+    padding-left: 35px;
+    font-size: 24px;
+    background-size: 28px auto;
+  }
+}
+
+.text-h3 {
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include media("3xl") {
+    font-size: 20px;
+  }
+}
+
+.text-p {
+  font-size: 18px;
+
+  @include media("3xl") {
+    font-size: 16px;
+  }
+}
+
+.text-default {
+  color: inherit;
+  text-transform: inherit;
+}

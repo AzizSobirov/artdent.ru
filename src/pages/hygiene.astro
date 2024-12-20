@@ -1,0 +1,83 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="профессиональная чистка зубов">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="8" title="<span>профессиональная <br/> чистка зубов</span>" />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на чистку зубов" list={["Виниры"]} />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheService -->
+    <Section name="service">
+      <H2>о профессиональной чистке зубов</H2>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="hygiene/1.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong>Профессиональная чистка</strong> — эффективный и безболезненный
+            способ сохранения здоровья зубов и дёсен. Цель процедуры — удалить зубной
+            камень и мягкий налёт, которые представляют собой скопление бактерий.
+            Такой налёт способствует возникновению заболеваний полости рта и появлению
+            неприятного запаха. <br />
+            Гигиеническая чистка — важная процедура, которая помогает сохранять здоровье
+            зубов с минимальными затратами времени и средств. Посещайте стоматолога
+            раз в полгода, выполняйте профосмор и профгигиену и ваша улыбка всегда
+            будет красивой.
+          </p>
+
+          <div
+            class="btn variant-solid"
+            role="button"
+            tabindex="0"
+            aria-label="Запись на прием"
+            data-modal="form"
+          >
+            Запись на прием
+          </div>
+        </div>
+      </div>
+
+      <H3>Что входит в чистку зубов</H3>
+      <div class="service__includes">
+        <Image class="service__includes-img" src="hygiene/2.png" />
+        <ul class="service__includes-list">
+          <li>Консультация стоматолога и первичный осмотр</li>
+          <li>
+            Снятие твёрдых и мягких зубных отложений ультразвуковым методом
+          </li>
+          <li>Очищение эмали методом Air Flow</li>
+          <li>Полировка специальными средствами</li>
+          <li>Обработка эмали для уменьшения чувствительности</li>
+        </ul>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

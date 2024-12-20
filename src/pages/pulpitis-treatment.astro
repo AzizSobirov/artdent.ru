@@ -1,0 +1,99 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Лечение пульпита">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="10" title="<span>Лечение пульпита <br/> под ключ</span>" />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на лечение пульпита" list={["Лечение пульпита"]} />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheCrowns -->
+    <Section name="service">
+      <H2>о лечении пульпита</H2>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="hygiene/1.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong>Пульпит</strong> – это воспаление пульпы, соединительной ткани,
+            заполняющей внутреннюю полость зуба. Из-за воспалительного процесса нарушается
+            нормальное кровообращение и поражаются нервные окончания. Зуб начинает
+            реагировать на холодное и горячее и сильно болит. Если пульпит не вылечить
+            вовремя, он может привести к потере зуба, воспалению дёсен и надкостницы
+            и даже заражению крови.
+          </p>
+
+          <div
+            class="btn variant-solid"
+            role="button"
+            tabindex="0"
+            aria-label="Запись на прием"
+            data-modal="form"
+          >
+            Запись на прием
+          </div>
+        </div>
+      </div>
+
+      <H3>Формы пульпита</H3>
+      <div class="service__forms">
+        <div class="service__forms-item">
+          <Image src="treatment/3.png" />
+          <div class="flex-col">
+            <H3> Острая форма</H3>
+            <p class="text-p">
+              Острая форма заболевания характеризуется приступообразными болями,
+              которые возникают в дневное и ночное время. При этом бывают
+              случаи, когда сложно сказать, какой зуб конкретно требует лечения,
+              так как боль распространяется по нервным стволам. При тяжёлой
+              форме пульпита боли становятся более ярко выраженными и
+              пульсирующими, безболезненные периоды сводятся к минимуму.
+            </p>
+          </div>
+        </div>
+        <div class="service__forms-item">
+          <Image src="treatment/3.png" />
+          <div class="flex-col">
+            <H3> хроническая форма</H3>
+            <p class="text-p">
+              Боли при пульпите в хронической форме не имеют такой выраженный
+              характер, как в острой форме. Чаще всего симптомы выражаются в
+              периодически появляющихся ноющих болях, которые возникают в
+              качестве реакции на температурные и вкусовые
+              раздражители.Хроническая форма может перетекать в острую, поэтому
+              при появлении симптомов важно своевременно обратиться к
+              стоматологу, чтобы не затягивать процесс лечения.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

@@ -1,0 +1,289 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Зубные коронки">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="7" title="<span>Зубные коронки <br/> под ключ</span>" />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на зубные коронки" list={["Зубные коронки"]} />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheCrowns -->
+    <Section name="service">
+      <H2>о зубных коронках</H2>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="crowns/img.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong> Зубные коронки</strong> – это стоматологические протезы, которые
+            <br />
+            используются для восстановления поврежденного или разрушенного зуба.
+            Они покрывают видимую часть зуба, укрепляют его и защищают от дальнейших
+            повреждений, а также восстанавливают его эстетический вид и функциональность.
+          </p>
+
+          <div
+            class="btn variant-solid"
+            role="button"
+            tabindex="0"
+            aria-label="Запись на прием"
+            data-modal="form"
+          >
+            Запись на прием
+          </div>
+        </div>
+      </div>
+
+      <H3>Виды коронок</H3>
+      <div class="service__types" data-filter-by="type">
+        <div class="service__filter" data-filter>
+          <div
+            class="service__filter-item active"
+            data-type="Металлокерамические"
+          >
+            Металлокерамические
+          </div>
+          <div class="service__filter-item" data-type="Керамические">
+            Керамические
+          </div>
+          <div class="service__filter-item" data-type="На имплант">
+            На имплант
+          </div>
+          <div class="service__filter-item" data-type="Циркониевые">
+            Циркониевые
+          </div>
+        </div>
+
+        <div class="service__list" data-items>
+          <div class="service__about" data-type="Керамические">
+            <Image class="service__about-img" src="crowns/img2.png" />
+            <div class="service__about-content">
+              <H3>коронки из металлокерамики</H3>
+              <p class="text-p">
+                К преимуществам относятся высокая прочность, длительный срок
+                службы (10-15 лет) и доступная цена. Основной недостаток —
+                вероятность просвечивания металла через керамический
+                облицовочный слой и возможные сколы эмали. <br />
+                В нашей стоматологии мы предлагаем установку немецких конструкций
+                премиум-качества Duceram Kiss. Высокое качество облицовочной керамики
+                исключает откалывание эмали, а многообразие цветов позволяет подобрать
+                оттенок, идеально подходящий к цвету своих зубов.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Керамические">
+            <Image class="service__about-img" src="crowns/img2.png" />
+            <div class="service__about-content">
+              <H3>Керамические</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="На имплант">
+            <Image class="service__about-img" src="crowns/img2.png" />
+            <div class="service__about-content">
+              <H3>На имплант</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Циркониевые">
+            <Image class="service__about-img" src="crowns/img2.png" />
+            <div class="service__about-content">
+              <H3>Циркониевые</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Циркониевые">
+            <Image class="service__about-img" src="crowns/img2.png" />
+            <div class="service__about-content">
+              <H3>Циркониевые</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="E-max">
+            <Image class="service__about-img" src="crowns/img2.png" />
+            <div class="service__about-content">
+              <H3>E-max</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheCrowns -->
+    <Section name="service">
+      <H2>ваша красивая улыбка в два этапа</H2>
+
+      <div class="service__about type-reversed">
+        <Image class="service__about-img" src="crowns/img3.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong> 1. Консультация</strong><br />
+            На первичной консультации стоматолог-ортопед проводит обследование на
+            высококлассном немецком оборудовании, чтобы оценить состояние зубов и
+            составить правильный план лечения.
+            <br /><br />
+            <strong> 2. Выбор материала</strong><br />
+            Ортопед и зубной техник подбирают подходящий материал и цвет изделия,
+            рассчитывают стоимость лечения и снимают слепки для изготовления коронок.
+            <br /><br />
+            <strong> 3. Изготовление коронки</strong><br />
+            Изделие изготавливается в собственной зуботехнической лаборатории стоматологии
+            «Бобров Клиник» из того материала, который выберет пациент после консультации
+            с врачом.
+          </p>
+        </div>
+      </div>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="crowns/img4.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong> 1. Примерка</strong><br />
+            До момента окончательной установки врач производит примерку изготовленной
+            конструкции, чтобы убедиться в качестве выполненной работы.
+            <br /><br />
+            <strong> 2. Корректировка</strong><br />
+            Если пациент чувствует дискомфорт, вызванный новой коронкой, то зубной
+            техник придёт на приём для корректировки конструкции в тот же день.
+            <br /><br />
+            <strong> 3. Фиксация</strong><br />
+            После того, как коронка идеально подошла и перестала причинять неудобства,
+            стоматолог осуществляет её фиксацию.
+          </p>
+        </div>
+      </div>
+    </Section>
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

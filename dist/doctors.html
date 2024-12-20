@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Site description">
+    <meta name="theme-color" content="#6194E0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="./assets/css/swiper.min.css"><link rel="stylesheet" href="./assets/css/fancybox.min.css">
+    <title>Врачи</title>
+    
+  <link rel="stylesheet" href="/assets/css/app.Dqm1gUlN.css"></head>
+  <body>
+    
+    <!-- The Header -->
+    <header class="header">
+  <div class="container">
+    <a href="/" class="header__logo" title="Стоматология в москве">
+      <img src="./assets/img/logo.png" alt="Стоматология в москве Артдент" loading="lazy">
+    </a>
+
+    <nav class="header__menu">
+      <ul class="menu">
+        <li class="menu-item active"><a href="/">Главная</a></li>
+        <li class="menu-item menu-item-has-children">
+          <a href="#">Услуги</a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="/braces">Брекеты</a></li>
+            <li class="menu-item"><a href="/aligners">Элайнеры</a></li>
+            <li class="menu-item"><a href="/implantation">Имплантация</a></li>
+            <li class="menu-item"><a href="/prosthetics">Протезирование</a></li>
+            <li class="menu-item"><a href="/veneers">Виниры</a></li>
+            <li class="menu-item">
+              <a href="/dental-crowns">Зубные коронки</a>
+            </li>
+            <li class="menu-item">
+              <a href="/hygiene">Проф. гигиена зубов</a>
+            </li>
+            <li class="menu-item">
+              <a href="/caries-treatment">Лечение кариеса</a>
+            </li>
+            <li class="menu-item">
+              <a href="/pulpitis-treatment">Лечение пульпита</a>
+            </li>
+            <li class="menu-item">
+              <a href="/tooth-extraction">Удаление зубов</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="/doctors">Врачи</a></li>
+        <li class="menu-item"><a href="/prices">Цены</a></li>
+        <li class="menu-item"><a href="/discounts">Акции</a></li>
+        <li class="menu-item"><a href="/portfolio">Наши работы</a></li>
+        <li class="menu-item"><a href="/reviews">Отзывы</a></li>
+        <li class="menu-item"><a href="/contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__contact">
+      <a href="tel:+74957790145" class="header__contact-phone" title="Телефон">
+        +7 (495) 779-01-45
+      </a>
+      <div class="btn variant-solid" role="button" tabindex="0" aria-label="Запись на прием" data-modal="form">
+        Запись на прием
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile__menu">
+    <div class="mobile__menu-tabs">
+      <div class="mobile__menu-tab" id="tab" data-toggle="menu" role="button" tabindex="0" aria-label="Меню">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 1.79032C0 1.0777 0.577697 0.5 1.29032 0.5H7.74194C8.45456 0.5 9.03226 1.0777 9.03226 1.79032V8.24194C9.03226 8.95456 8.45456 9.53226 7.74194 9.53226H1.29032C0.577697 9.53226 0 8.95456 0 8.24194V1.79032Z" fill="currentColor"></path>
+          <path d="M10.9677 1.79032C10.9677 1.0777 11.5454 0.5 12.2581 0.5H18.7097C19.4223 0.5 20 1.0777 20 1.79032V8.24194C20 8.95456 19.4223 9.53226 18.7097 9.53226H12.2581C11.5454 9.53226 10.9677 8.95456 10.9677 8.24194V1.79032Z" fill="currentColor"></path>
+          <path d="M10.9677 12.1129C10.9677 11.4003 11.5454 10.8226 12.2581 10.8226H18.7097C19.4223 10.8226 20 11.4003 20 12.1129V18.5645C20 19.2771 19.4223 19.8548 18.7097 19.8548H12.2581C11.5454 19.8548 10.9677 19.2771 10.9677 18.5645V12.1129Z" fill="currentColor"></path>
+          <path d="M0 12.1129C0 11.4003 0.577697 10.8226 1.29032 10.8226H7.74194C8.45456 10.8226 9.03226 11.4003 9.03226 12.1129V18.5645C9.03226 19.2771 8.45456 19.8548 7.74194 19.8548H1.29032C0.577697 19.8548 0 19.2771 0 18.5645V12.1129Z" fill="currentColor"></path>
+        </svg>
+        <span>Меню</span>
+      </div>
+      <div class="mobile__menu-tab" id="tab" data-toggle="services" role="button" tabindex="0" aria-label="Услуги">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 0C2 0 0 3 0 6C0 8.11 1 11 2 12C3 13 4 20 6 20C10.54 20 8 13 10 13C12 13 9.46 20 14 20C16 20 17 13 18 12C19 11 20 8.11 20 6C20 3 18 0 15 0C12 0 12 1 10 1C8 1 8 0 5 0Z" fill="currentColor"></path>
+        </svg>
+        <span>Услуги</span>
+      </div>
+      <a href="#reviews" class="mobile__menu-tab" id="tab-link" title="Отзывы">
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 18.3334V3.33335C2.5 2.87502 2.66333 2.4828 2.99 2.15669C3.31667 1.83058 3.70889 1.66724 4.16667 1.66669H17.5C17.9583 1.66669 18.3508 1.83002 18.6775 2.15669C19.0042 2.48335 19.1672 2.87558 19.1667 3.33335V13.3334C19.1667 13.7917 19.0036 14.1842 18.6775 14.5109C18.3514 14.8375 17.9589 15.0006 17.5 15H5.83333L2.5 18.3334ZM8.39583 11.875L10.8333 10.3959L13.2708 11.875L12.625 9.10419L14.7917 7.22919L11.9375 7.00002L10.8333 4.37502L9.72917 7.00002L6.875 7.22919L9.04167 9.10419L8.39583 11.875Z" fill="currentColor"></path>
+        </svg>
+        <span>Отзывы</span>
+      </a>
+      <a href="/contacts" class="mobile__menu-tab" title="Контакты">
+        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2H15V0H13V2H5V0H3V2H2C1.46957 2 0.960859 2.21071 0.585786 2.58579C0.210714 2.96086 0 3.46957 0 4V18C0 18.5304 0.210714 19.0391 0.585786 19.4142C0.960859 19.7893 1.46957 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2ZM9 5C10.66 5 12 6.34 12 8C12 9.66 10.66 11 9 11C7.34 11 6 9.66 6 8C6 6.34 7.34 5 9 5ZM15 17H3V16C3 14 7 12.9 9 12.9C11 12.9 15 14 15 16V17Z" fill="currentColor"></path>
+        </svg>
+
+        <span>Контакты</span>
+      </a>
+    </div>
+    <div class="mobile__menu-content">
+      <div class="mobile__menu-close" id="close" role="button" aria-label="Закрыть меню" tabindex="0">
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L22 22" stroke="white"></path>
+          <path d="M1 1L22 22" stroke="white"></path>
+          <path d="M1 1L22 22" stroke="white"></path>
+          <path d="M22 1L1 22" stroke="white"></path>
+          <path d="M22 1L1 22" stroke="white"></path>
+          <path d="M22 1L1 22" stroke="white"></path>
+        </svg>
+      </div>
+      <div id="content"></div>
+    </div>
+  </div>
+</header>
+    <!-- The Main -->
+    
+  <main>
+    <!-- TheDoctors -->
+    <section class="doctors">
+  
+        
+        <div class="container">
+          
+  <div class="text-h2">
+  наши врачи
+</div>
+
+  <div class="wrapper">
+    <div class="doctors__content">
+      <div class="doctors__list is-main">
+        <div class="doctors__item" data-page="1">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 0
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="1">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 1
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="1">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 2
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="1">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 3
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="2">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 4
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="2">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 5
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="2">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 6
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div><div class="doctors__item" data-page="2">
+              <div class="doctors__item-img">
+                <img src="./assets/img/doctors/1.png" alt loading="lazy">
+              </div>
+              <div class="doctors__item-content">
+                <span class="doctors__item-name">
+                  <strong>Валерина</strong>
+                  Валерия Валерьевна 7
+                </span>
+                <p class="doctors__item-job">Врач ортодонт</p>
+              </div>
+            </div>
+      </div>
+
+      
+    </div>
+
+    <div class="doctors__swiper">
+      <div class="swiper is-main">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 0</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 1</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 2</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 3</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 4</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 5</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 6</p>
+                </div>
+              </div><div class="swiper-slide doctors__card">
+                <div class="doctors__card-video">
+                  <div class="bg-img">
+                    <img src="./assets/img/doctors/1-poster.png" alt loading="lazy">
+                  </div>
+
+                  <div class="btn" role="button" data-fancybox="doctors" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ"></div>
+                </div>
+
+                <div class="doctors__card-content">
+                  <div class="text-h3 text-default">
+  Валерина Валерия Валерьевна
+</div>
+                  <p class="text-job">Врач ортодонт 7</p>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+        
+      
+</section>
+    <!-- TheAbout -->
+    <section class="about">
+  
+        
+        <div class="container">
+          
+  <div class="text-h2">
+  Стоматология, которой доверяют 
+</div>
+  <p class="text-desc">
+    Стоматология "АртДент" – это современный центр заботы о вашем здоровье и
+    красоте улыбки. Мы предлагаем широкий спектр услуг, чтобы удовлетворить все
+    потребности наших пациентов: от установки брекет-систем и элайнеров до
+    сложных процедур, таких как имплантация зубов и протезирование. Наша команда
+    высококвалифицированных специалистов использует только передовые технологии
+    и материалы, чтобы обеспечить максимальный комфорт, безопасность и
+    эффективность лечения.
+  </p>
+  <div class="about__wrapper">
+    <div class="about__video">
+      <div class="bg-img">
+        <img src="./assets/img/stomotology.png" alt loading="lazy">
+      </div>
+
+      <div class="btn" role="button" data-fancybox="about" data-src="https://youtu.be/ZE14A5u-Huc?si=r3wTMF4SBsaOYstQ">
+      </div>
+      <span>Посмотрите видео о нашей стоматологии</span>
+    </div>
+    <p class="text-desc">
+      В "АртДент" вы найдете полный комплекс стоматологических услуг: установка
+      виниров и коронок, лечение кариеса и пульпита, профессиональная чистка
+      зубов, а также бережное удаление зубов. Каждый пациент для нас уникален, и
+      мы подходим к каждому случаю с особым вниманием, предлагая индивидуальные
+      решения. Мы гордимся доверием наших пациентов и стремимся, чтобы каждая
+      улыбка, созданная в "АртДент", была яркой, здоровой и уверенной.
+    </p>
+  </div>
+
+        </div>
+        
+      
+</section>
+    <!-- TheForm -->
+    <section class="application">
+  
+        
+        <div class="container">
+          
+      <div class="form">
+        
+            <div class="form-title">не откладывайте лечение</div>
+            <div class="form-desc">
+              Запишитесь прямо сейчас на бесплатный осмотр и консультацию.
+            </div>
+            <form id="form">
+              <input type="text" name="name" placeholder="Введите имя" required>
+              <input type="text" name="phone" placeholder="Номер телефона" required>
+              <button type="submit">Запись на прием</button>
+              <div class="text-xs">
+                Нажимая кнопку вы даете согласие на обработку персональных
+                данных <br> и соглашаетесь с Политикой конфеденциальности
+              </div>
+            </form>
+          
+      </div>
+    
+        </div>
+        
+      
+</section>
+  </main>
+
+    <!-- The Footer -->
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__info">
+      <a href="/" class="footer__info-logo" title="Стоматология в москве">
+        <img src="./assets/img/logo.png" alt="Стоматология в москве Артдент" loading="lazy">
+      </a>
+      <p class="text-desc">Наши социальные сети</p>
+      <div class="footer__info-socials">
+        <a href="#" class="icon" target="_blank" title="VK">
+          <img src="./assets/img/icons/vk.svg" alt loading="lazy">
+        </a>
+        <a href="#" class="icon" target="_blank" title="WhatsApp">
+          <img src="./assets/img/icons/whatsapp.svg" alt loading="lazy">
+        </a>
+        <a href="#" class="icon" target="_blank" title="Telegram">
+          <img src="./assets/img/icons/telegram.svg" alt loading="lazy">
+        </a>
+      </div>
+      <a href="https://seo-tex.ru/" target="_blank" title="Разработка сайта" class="footer__info-dev">
+        <div class="icon">
+          <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.4857 0.651367C5.70161 0.651367 0 6.27452 0 14.1441C0 16.2745 0.416494 18.231 1.17772 19.9702L7.95637 13.7963L5.55801 11.0282L20.7383 8.01365L15.7404 22.7963L13.342 20.0282L6.76437 26.0282C8.7176 27.0716 10.9867 27.6514 13.4857 27.6514C21.3127 27.6514 27 22.0282 27 14.1586C27 6.28904 21.3127 0.651367 13.4857 0.651367Z" fill="#555555"></path>
+          </svg>
+        </div>
+        <span>
+          Разработка <br>
+          и продвижение
+        </span>
+      </a>
+    </div>
+
+    <div class="footer__menu">
+      <div class="footer__menu-title">Информация</div>
+      <ul class="menu">
+        <li class="menu-item active"><a href="/">Главная</a></li>
+        <li class="menu-item"><a href="/doctors">Врачи</a></li>
+        <li class="menu-item"><a href="/prices">Цены</a></li>
+        <li class="menu-item"><a href="/discounts">Акции</a></li>
+        <li class="menu-item"><a href="/portfolio">Наши работы</a></li>
+        <li class="menu-item"><a href="/reviews">Отзывы</a></li>
+        <li class="menu-item"><a href="/contacts">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__menu">
+      <div class="footer__menu-title">Услуги</div>
+      <ul class="menu">
+        <li class="menu-item"><a href="/braces">Брекеты</a></li>
+        <li class="menu-item"><a href="/aligners">Элайнеры</a></li>
+        <li class="menu-item"><a href="/implantation">Имплантация</a></li>
+        <li class="menu-item"><a href="/prosthetics">Протезирование</a></li>
+        <li class="menu-item"><a href="/veneers">Виниры</a></li>
+        <li class="menu-item">
+          <a href="/dental-crowns">Зубные коронки</a>
+        </li>
+        <li class="menu-item">
+          <a href="/hygiene">Проф. гигиена зубов</a>
+        </li>
+        <li class="menu-item">
+          <a href="/caries-treatment">Лечение кариеса</a>
+        </li>
+        <li class="menu-item">
+          <a href="/pulpitis-treatment">Лечение пульпита</a>
+        </li>
+        <li class="menu-item">
+          <a href="/tooth-extraction">Удаление зубов</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__contacts">
+      <ul class="footer__contacts-list">
+        <li>
+          <div class="icon">
+      <img src="./assets/img/icons/marker.svg" alt loading="lazy">
+    </div>
+          <p class="text-p">г.Москва, ул. Пудовкина 5</p>
+        </li>
+        <li>
+          <a href="tel:+74957790145" target="_blank" title="Телефон">
+            <div class="icon">
+      <img src="./assets/img/icons/phone.svg" alt loading="lazy">
+    </div>
+            <p class="text-p">+7 (495) 799-01-45</p>
+          </a>
+        </li>
+      </ul>
+
+      <iframe src="https://yandex.uz/map-widget/v1/org/artdent/1067447758/?ll=37.529740%2C55.726815&source=serp_navig&z=17" width="560" height="400" allowfullscreen="true" style="position:relative;"></iframe>
+    </div>
+  </div>
+</footer>
+    <!-- The Modal -->
+    <div class="modal-overlay">
+  <div class="modal" data-template="form">
+    <div class="container">
+      <div class="btn-close" data-modal="close"></div>
+      <div class="form">
+      
+          <div class="form-title">не откладывайте лечение</div>
+          <div class="form-desc">
+            Запишитесь прямо сейчас на бесплатный осмотр и консультацию.
+          </div>
+          <form id="form">
+            <input type="text" name="name" placeholder="Введите имя" required>
+            <input type="text" name="phone" placeholder="Номер телефона" required>
+            <button type="submit">Запись на прием</button>
+            <div class="text-xs">
+              Нажимая кнопку вы даете согласие на обработку персональных данных
+              <br> и соглашаетесь с Политикой конфеденциальности
+            </div>
+          </form>
+        
+    </div>
+    </div>
+  </div>
+
+  <div class="modal" data-template="success">
+    <div class="container">
+      <div class="btn-close" data-modal="close"></div>
+      <div class="form success">
+      
+          <div class="form-title">Спасибо за вашу заявку</div>
+          <div class="form-desc">
+            Наш менеджер скоро свяжется с Вами для уточнения деталей
+          </div>
+          <button type="button" data-modal="close">
+            Закрыть
+          </button>
+        
+    </div>
+    </div>
+  </div>
+</div>
+    
+    <!-- The Scripts -->
+    <script src="./assets/js/swiper.min.js"></script><script src="./assets/js/fancybox.min.js"></script><script src="./assets/js/app.js?v=284ad"></script>
+  </body>
+</html>

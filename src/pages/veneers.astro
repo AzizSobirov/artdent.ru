@@ -1,0 +1,324 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Виниры">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="6" title="<span>Виниры <br/> под ключ</span>" />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на виниры" list={["Виниры"]} />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheVeneers -->
+    <Section name="service">
+      <H2>о винирах</H2>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="veneers/img.png" />
+        <div class="service__about-content">
+          <p class="text-desc">
+            <span> Виниры</span> — это сверхтонкие накладки на передние зубы из
+            керамики или композитного материала, которые крепятся с помощью
+            специального состава. Благодаря сверхтонкой конструкции, выглядят
+            как собственные зубы. Какого результата можно добиться с винирами:
+          </p>
+
+          <ul class="service__about-list">
+            <li>
+              <Icon src="plus-secondary.svg" />
+              <p class="text-p">
+                <strong>Эффект anti-age.</strong> Зубы белые, красивые и
+                здоровые, что даёт визуальный эффект омоложения. В итоге вы
+                выглядите минимум на 10 лет моложе.
+              </p>
+            </li>
+            <li>
+              <Icon src="plus-secondary.svg" />
+              <p class="text-p">
+                <strong> Естественность.</strong> Качественные и грамотно
+                установленные виниры повторяют анатомическую форму зубов,
+                поэтому незаметны окружающим.
+              </p>
+            </li>
+            <li>
+              <Icon src="plus-secondary.svg" />
+              <p class="text-p">
+                <strong>Защита.</strong> Помимо всего прочего, зубы приобретает
+                дополнительную прочность. Накладки защищают от негативных
+                факторов и агрессивных внешних воздействий.
+              </p>
+            </li>
+          </ul>
+
+          <div
+            class="btn variant-solid"
+            role="button"
+            tabindex="0"
+            aria-label="Запись на прием"
+            data-modal="form"
+          >
+            Запись на прием
+          </div>
+        </div>
+      </div>
+
+      <H3>Показания к установке виниров</H3>
+      <div class="service__installation">
+        <div class="service__installation-item">
+          <Image src="veneers/1.png" />
+          <p class="text-p">Сколы, трещины, пломбы, стираемость зубов</p>
+        </div>
+        <div class="service__installation-item">
+          <Image src="veneers/2.png" />
+          <p class="text-p">Потемнения эмали, неоднородный цвет, флюороз</p>
+        </div>
+        <div class="service__installation-item">
+          <Image src="veneers/3.png" />
+          <p class="text-p">Неровный зубной ряд, диастемы</p>
+        </div>
+      </div>
+
+      <H3>виды виниров</H3>
+      <div class="service__types" data-filter-by="type">
+        <div class="service__filter" data-filter>
+          <div class="service__filter-item active" data-type="Керамические">
+            Керамические
+          </div>
+          <div class="service__filter-item" data-type="Композитные">
+            Композитные
+          </div>
+          <div class="service__filter-item" data-type="Люминиры">Люминиры</div>
+          <div class="service__filter-item" data-type="Ультраниры">
+            Ультраниры
+          </div>
+          <div class="service__filter-item" data-type="Циркониевые">
+            Циркониевые
+          </div>
+          <div class="service__filter-item" data-type="E-max">E-max</div>
+        </div>
+
+        <div class="service__list" data-items>
+          <div class="service__about" data-type="Керамические">
+            <Image class="service__about-img" src="veneers/img2.png" />
+            <div class="service__about-content">
+              <H3>керамические</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Композитные">
+            <Image class="service__about-img" src="veneers/img2.png" />
+            <div class="service__about-content">
+              <H3>Композитные</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Люминиры">
+            <Image class="service__about-img" src="veneers/img2.png" />
+            <div class="service__about-content">
+              <H3>Люминиры</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Ультраниры">
+            <Image class="service__about-img" src="veneers/img2.png" />
+            <div class="service__about-content">
+              <H3>Ультраниры</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Циркониевые">
+            <Image class="service__about-img" src="veneers/img2.png" />
+            <div class="service__about-content">
+              <H3>Циркониевые</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="E-max">
+            <Image class="service__about-img" src="veneers/img2.png" />
+            <div class="service__about-content">
+              <H3>E-max</H3>
+              <p class="text-p">
+                Самый эстетичный и надёжный вариант, который гарантирует
+                отличный эстетический эффект. Керамика естественно смотрится в
+                полости рта, полностью биосовместима с организмом человека и не
+                окрашивается со временем. При правильной эксплуатации срок
+                службы составляет 15 и более лет. К недостаткам можно отнести
+                более высокую стоимость по сравнению с композитными винирами, и
+                необходимость препарирования зубов для установки.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheVeneers -->
+    <Section name="service">
+      <H2>ваша красивая улыбка в два этапа</H2>
+
+      <div class="service__about type-reversed">
+        <Image class="service__about-img" src="veneers/5.png" />
+
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong> 1. Подготовка и снятие слепков</strong><br />
+            Врач очищает зубы от налёта, при необходимости проводит минимально необходимую
+            обточку эмали и снимает слепки. Для защиты зубов от внешних факторов
+            на время изготовления виниров специалист фиксирует временные накладки.
+            <br /><br />
+            <strong> 2. Изготовление виниров</strong><br />
+            Виниры для зубов изготавливаются по слепкам и вашим индивидуальным пожеланиям
+            в лаборатории клиники. Благодаря работе без посредников мы получаем стабильно
+            высокое качество по доступной цене.
+          </p>
+        </div>
+      </div>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="veneers/6.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong>1. Примерка</strong><br />
+            Уже через 5-7 дней ортопед примеряет готовые накладки на зубы. При необходимости
+            их сразу же корректируют и подшлифовывают для достижения идеального эстетического
+            эффекта.
+            <br /><br />
+            <strong> 2. Фиксация</strong><br />
+            После корректировки врач крепит пластинки на специальный композитный
+            клей. Процедура в среднем длится 1-2 часа. Никакого дискомфорта! Сразу
+            после приёма вы можете отправляться по своим делам.
+          </p>
+        </div>
+      </div>
+    </Section>
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

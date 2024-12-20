@@ -1,0 +1,205 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Лечение кариеса">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="9" title="<span>Лечение кариеса <br/> под ключ</span>" />
+    <!-- ThePrice -->
+    <ThePrice title="Цены на лечение кариеса" list={["Лечение кариеса"]} />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheCrowns -->
+    <Section name="service">
+      <H2>о лечении кариеса</H2>
+
+      <div class="service__about">
+        <Image class="service__about-img" src="hygiene/1.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong>Кариес</strong> – это инфекционное поражение зубов, при котором
+            происходит деминерализация и размягчение твердых тканей зуба с образованием
+            дефекта в виде полости. Это наиболее распространенное заболевание зубочелюстной
+            системы. Кариес встречается среди всех возрастных групп, но чаще среди
+            взрослых людей старше 35 лет, где составляет 98-99%.
+          </p>
+
+          <div
+            class="btn variant-solid"
+            role="button"
+            tabindex="0"
+            aria-label="Запись на прием"
+            data-modal="form"
+          >
+            Запись на прием
+          </div>
+        </div>
+      </div>
+
+      <H3>стадии развития кариеса</H3>
+      <div class="service__types" data-filter-by="type">
+        <div class="service__filter" data-filter>
+          <div class="service__filter-item active" data-type="Стадия пятна">
+            Стадия пятна
+          </div>
+          <div class="service__filter-item" data-type="Поверхностный">
+            Поверхностный
+          </div>
+          <div class="service__filter-item" data-type="Средний">Средний</div>
+          <div class="service__filter-item" data-type="Глубокий">Глубокий</div>
+        </div>
+
+        <div class="service__list" data-items>
+          <div class="service__about" data-type="Стадия пятна">
+            <Image class="service__about-img type-2" src="treatment/1.png" />
+            <div class="service__about-content type-2">
+              <H3>СТАДИЯ БЕЛОГО ПЯТНА</H3>
+              <p class="text-p">
+                Поверхность зуба не нарушена, но присутствует пятно белого
+                цвета, которое <br /> свидетельствует о недостатке кальция на этом
+                участке. Такие меловидные <br /> пятна называют деминерализацией.
+                Эмаль начинает терять блеск, но на <br /> данной стадии ситуация
+                обратима. Главное, вовремя обратиться к <br /> стоматологу и предотвратить
+                переход к глубокому кариесу.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Поверхностный">
+            <Image class="service__about-img type-2" src="treatment/1.png" />
+            <div class="service__about-content type-2">
+              <H3>Поверхностный</H3>
+              <p class="text-p">
+                Поверхность зуба не нарушена, но присутствует пятно белого
+                цвета, которое свидетельствует о недостатке кальция на этом
+                участке. Такие меловидные пятна называют деминерализацией. Эмаль
+                начинает терять блеск, но на данной стадии ситуация обратима.
+                Главное, вовремя обратиться к стоматологу и предотвратить
+                переход к глубокому кариесу.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Средний">
+            <Image class="service__about-img type-2" src="treatment/1.png" />
+            <div class="service__about-content type-2">
+              <H3>Средний</H3>
+              <p class="text-p">
+                Поверхность зуба не нарушена, но присутствует пятно белого
+                цвета, которое свидетельствует о недостатке кальция на этом
+                участке. Такие меловидные пятна называют деминерализацией. Эмаль
+                начинает терять блеск, но на данной стадии ситуация обратима.
+                Главное, вовремя обратиться к стоматологу и предотвратить
+                переход к глубокому кариесу.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+
+          <div class="service__about" data-type="Глубокий">
+            <Image class="service__about-img type-2" src="treatment/1.png" />
+            <div class="service__about-content type-2">
+              <H3>Глубокий</H3>
+              <p class="text-p">
+                Поверхность зуба не нарушена, но присутствует пятно белого
+                цвета, которое свидетельствует о недостатке кальция на этом
+                участке. Такие меловидные пятна называют деминерализацией. Эмаль
+                начинает терять блеск, но на данной стадии ситуация обратима.
+                Главное, вовремя обратиться к стоматологу и предотвратить
+                переход к глубокому кариесу.
+              </p>
+
+              <div
+                class="btn variant-solid"
+                role="button"
+                tabindex="0"
+                aria-label="Запись на прием"
+                data-modal="form"
+              >
+                Запись на прием
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <H3>основные виды кариеса</H3>
+      <div class="service__about type-reversed">
+        <Image class="service__about-img" src="treatment/2.png" />
+        <div class="service__about-content type-2">
+          <p class="text-p">
+            <strong>ФИССУРНЫЙ</strong><br />
+            Фиссурный кариес — кариозные поражения, расположенные в фиссурах зубов.
+            Встречается очень часто, так как в фиссурах скапливаются остатки пищи,
+            которые представляют собой благоприятную среду для размножения бактерий.
+            <br /><br />
+            <strong>ПРИКОРНЕВОЙ</strong><br />
+            Более редкая и сложная форма, связанная анатомическими особенностями
+            строения зубов. Симптомы — кратковременные болезненные ощущения, потемнение
+            эмали, неприятный запах изо рта.
+            <br /><br />
+
+            <strong>ПРИШЕЕЧНЫЙ</strong><br />
+            Пришеечный кариес — самый опасный вид, который возникает у корневой части
+            зуба, в зоне его соприкосновения с десной. Важно обратиться к врачу на
+            начальном этапе, не доводя до сложной стадии.
+          </p>
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>

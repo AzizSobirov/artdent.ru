@@ -1,0 +1,125 @@
+.discounts {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 65px;
+
+    @include media("3xl") {
+      gap: 50px;
+    }
+    @include media("lg") {
+      gap: 40px;
+    }
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 25px;
+
+    @include media("3xl") {
+      gap: 30px 20px;
+    }
+    @include media("lg") {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @include media("sm") {
+      gap: 15px;
+    }
+  }
+
+  &__item {
+    padding: 20px 20px 20px 10px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+
+    @include media("3xl") {
+      gap: 35px;
+    }
+    @include media("2xl") {
+      gap: 20px;
+    }
+    @include media("sm") {
+      padding: 10px 20px 20px;
+      flex-direction: column;
+    }
+
+    &-img {
+      --size: 215px;
+      min-width: var(--size);
+      width: var(--size);
+      height: var(--size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include media("3xl") {
+        --size: 200px;
+      }
+      @include media("2xl") {
+        --size: 180px;
+      }
+
+      div {
+        width: calc(var(--size) - 50px);
+        height: calc(var(--size) - 50px);
+        border-radius: 20px;
+        transform: rotate(-45deg);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // @include media("3xl") {
+        //   width: 150px;
+        //   height: 150px;
+        // }
+        // @include media("2xl") {
+        //   width: 130px;
+        //   height: 130px;
+        // }
+      }
+
+      img {
+        min-width: 135%;
+        height: 135%;
+        object-fit: cover;
+        transform: rotate(45deg);
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
+
+      @include media("3xl") {
+        gap: 20px;
+
+        .text-desc {
+          text-wrap: balance;
+        }
+        .text-desc br {
+          display: none;
+        }
+      }
+      @include media("sm") {
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+}

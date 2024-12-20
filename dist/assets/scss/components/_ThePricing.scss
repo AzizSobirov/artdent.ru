@@ -1,0 +1,163 @@
+.pricing {
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 65px;
+
+    @include media("3xl") {
+      gap: 50px;
+    }
+    @include media("lg") {
+      gap: 40px;
+    }
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    @include media("sm") {
+      gap: 15px;
+    }
+
+    .text-desc {
+      padding-left: 75px;
+
+      @include media("3xl") {
+        padding-left: 60px;
+      }
+      @include media("lg") {
+        padding-left: 50px;
+      }
+      @include media("sm") {
+        padding-left: 35px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 22px;
+
+    @include media("3xl") {
+      gap: 30px 20px;
+    }
+    @include media("2xl") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media("sm") {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+
+  .card {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    &:hover::before {
+      transform: translate(5px, -5px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 84px;
+      height: 84px;
+      background-image: url('data:image/svg+xml,<svg width="85" height="86" viewBox="0 0 85 86" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="43.2631" width="60" height="60" rx="8" transform="rotate(-45 0 43.2631)" fill="%23E08761"/><path d="M57.447 29.1981C57.447 28.6458 56.9993 28.1981 56.447 28.1981H47.447C46.8947 28.1981 46.447 28.6458 46.447 29.1981C46.447 29.7504 46.8947 30.1981 47.447 30.1981H55.447V38.1981C55.447 38.7504 55.8947 39.1981 56.447 39.1981C56.9993 39.1981 57.447 38.7504 57.447 38.1981V29.1981ZM28.1541 58.9052L57.1541 29.9052L55.7399 28.491L26.7399 57.491L28.1541 58.9052Z" fill="white"/></svg>');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: var(--transition-ease);
+
+      @include media("2xl") {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 300px;
+
+      @include media("3xl") {
+        height: 280px;
+      }
+      @include media("lg") {
+        height: 240px;
+      }
+      @include media("md") {
+        height: 220px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      padding: 18px 18px 40px;
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+
+      & > .text-desc {
+        margin-bottom: 30px;
+      }
+
+      @include media("sm") {
+        gap: 20px;
+
+        & > .text-desc {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &__list {
+      margin-top: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      &-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+    }
+
+    .text-desc {
+      text-wrap: balance;
+    }
+  }
+}

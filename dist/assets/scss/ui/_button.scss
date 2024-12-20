@@ -1,0 +1,43 @@
+.btn {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: var(--transition-ease);
+
+  &.variant-solid {
+    width: 238px;
+    height: 60px;
+    color: #fff;
+    font-size: 18px;
+    background: var(--secondary);
+    border-radius: 999px;
+
+    &:hover {
+      background: var(--secondary-light);
+    }
+
+    @include media("3xl") {
+      font-size: 16px;
+    }
+  }
+
+  &.variant-outline {
+    width: 210px;
+    height: 60px;
+    color: var(--primary);
+    font-size: 18px;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+
+    &:hover {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    @include media("3xl") {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,220 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import TheHero from "../components/TheHero.astro";
+import TheDiscounts from "../components/TheDiscounts.astro";
+import ThePricing from "../components/ThePricing.astro";
+import TheAbout from "../components/TheAbout.astro";
+import TheDoctors from "../components/TheDoctors.astro";
+import TheReviews from "../components/TheReviews.astro";
+import TheRating from "../components/TheRating.astro";
+import TheFAQ from "../components/TheFAQ.astro";
+import ThePrice from "../components/ThePrice.astro";
+import TheForm from "../components/TheForm.astro";
+import TheProjects from "../components/TheProjects.astro";
+---
+
+<App title="Имплантация">
+  <main>
+    <!-- TheHero -->
+    <TheHero id="4" title="<span>Имплантация <br/> под ключ</span>" />
+    <!-- ThePrice -->
+    <ThePrice
+      title="Цены на имплантацию зубов"
+      list={["Имплантация", "Закрытый синус-лифтинг", "Открытый синус-лифтинг"]}
+    />
+    <!-- TheDiscounts -->
+    <TheDiscounts total={2} />
+    <!-- TheImplantationTypes -->
+    <Section name="implantation">
+      <H2>виды имплантации</H2>
+      <div class="implantation__types">
+        <div class="implantation__type">
+          <Image class="implantation__type-img" src="implantation/1.png" />
+          <div class="implantation__type-content">
+            <H3>Классическая (двухэтапная) имплантация</H3>
+            <p class="font-light">
+              Имплант устанавливается в костную ткань, после чего десна
+              зашивается. На заживление уходит от 3 до 6 месяцев. После этого
+              устанавливается абатмент и коронка.
+            </p>
+            <div class="flex-col">
+              <strong>Преимущества:</strong>
+              <ul>
+                <li>
+                  <Icon src="plus.svg" />
+                  <span>Надежная методика, подходит для сложных случаев.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex-col">
+              <strong>Недостатки:</strong>
+              <ul>
+                <li>
+                  <Icon src="minus.svg" />
+                  <span>Длительный процесс лечения.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="implantation__type">
+          <Image class="implantation__type-img" src="implantation/2.png" />
+          <div class="implantation__type-content">
+            <H3>одномоментная имплантация</H3>
+            <p class="font-light">
+              Имплант и временная коронка устанавливаются за один прием.
+              Позволяет сократить время лечения.
+            </p>
+            <div class="flex-col">
+              <strong>Преимущества:</strong>
+              <ul>
+                <li>
+                  <Icon src="plus.svg" />
+                  <span>Быстрый результат.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex-col">
+              <strong>Недостатки:</strong>
+              <ul>
+                <li>
+                  <Icon src="minus.svg" />
+                  <span
+                    >Подходит не для всех случаев, требуется достаточный объем
+                    кости.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="implantation__type">
+          <Image class="implantation__type-img" src="implantation/3.png" />
+          <div class="implantation__type-content">
+            <H3>Мини-имплантация </H3>
+            <p class="font-light">
+              Устанавливаются небольшие импланты для временной фиксации или
+              протезирования зубов.
+            </p>
+            <div class="flex-col">
+              <strong>Преимущества:</strong>
+              <ul>
+                <li>
+                  <Icon src="plus.svg" />
+                  <span
+                    >Минимально инвазивная, подходит для временных решений.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex-col">
+              <strong>Недостатки:</strong>
+              <ul>
+                <li>
+                  <Icon src="minus.svg" />
+                  <span
+                    >Не используется для долговременного восстановления зубов.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="implantation__type">
+          <Image class="implantation__type-img" src="implantation/4.png" />
+          <div class="implantation__type-content">
+            <H3>All-on-4 и All-on-6 </H3>
+            <p class="font-light">
+              Установка 4 или 6 имплантов, на которые фиксируется полный зубной
+              протез. Чаще применяется для восстановления целого зубного ряда.
+            </p>
+            <div class="flex-col">
+              <strong>Преимущества:</strong>
+              <ul>
+                <li>
+                  <Icon src="plus.svg" />
+                  <span>Быстрая установка, подходит для полной адентии.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex-col">
+              <strong>Недостатки:</strong>
+              <ul>
+                <li>
+                  <Icon src="minus.svg" />
+                  <span>Невозможность индивидуальной замены зубов</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <!-- TheImplantationSteps -->
+    <Section name="implantation">
+      <H2>этапы имплантации</H2>
+      <div class="implantation__steps">
+        <div class="implantation__step">
+          <div class="implantation__step-number">01.</div>
+          <Image class="implantation__step-img" src="implantation/step-1.png" />
+          <H3>ВЖИВЛЕНИЕ ИСКУССТВЕННОГО КОРНЯ</H3>
+          <p class="text-desc">
+            В стоимость включены: подготовительные этапы, материалы и анестезия,
+            работа опытного хирурга (врач высшей категории).
+          </p>
+        </div>
+
+        <div class="implantation__step">
+          <div class="implantation__step-number">02.</div>
+          <Image class="implantation__step-img" src="implantation/step-2.png" />
+          <H3>УСТАНОВКА ФОРМИРОВАТЕЛЯ ДЕСНЫ</H3>
+          <p class="text-desc">
+            Выполняется после полного приживления импланта. Устанавливается на
+            10-14 дней. Меняется на временный абатмент.
+          </p>
+        </div>
+
+        <div class="implantation__step">
+          <div class="implantation__step-number">03.</div>
+          <Image class="implantation__step-img" src="implantation/step-3.png" />
+          <H3>ИЗГОТОВЛЕНИЕ И КРЕПЛЕНИЕ ПОСТОЯННОГО АБАТМЕНТА</H3>
+          <p class="text-desc">
+            Шаблонный накостный элемент конструкции меняется на индивидуальный.
+            Обеспечивает более надежное соединение с коронкой.
+          </p>
+        </div>
+
+        <div class="implantation__step">
+          <div class="implantation__step-number">04.</div>
+          <Image class="implantation__step-img" src="implantation/step-4.png" />
+          <H3>ФИКСАЦИЯ ОРТОПЕДИЧЕСКОЙ КОНСТРУКЦИИ</H3>
+          <p class="text-desc">
+            Заранее снимаем слепки для одиночной коронки или несъёмного протеза.
+            Изготавливаем его в собственной лаборатории из металлокерамики.
+            Также в цену включена работа стоматолога-ортопеда.
+          </p>
+        </div>
+      </div>
+    </Section>
+    <!-- TheForm -->
+    <TheForm />
+    <!-- TheProjects -->
+    <TheProjects />
+    <!-- TheDoctors -->
+    <TheDoctors />
+    <!-- TheReviews -->
+    <TheReviews />
+    <!-- TheRating -->
+    <TheRating />
+    <!-- TheFAQ -->
+    <TheFAQ />
+  </main>
+</App>
