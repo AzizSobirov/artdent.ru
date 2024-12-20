@@ -62,7 +62,7 @@
         width: 980px;
         height: 700px;
         object-fit: contain;
-        transform: translateX(12%) translateY(16%);
+        transform: translateX(12%) translateY(16%) scale(1.1);
 
         @include media("3xl") {
           width: 780px;
